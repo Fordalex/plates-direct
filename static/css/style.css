@@ -1,3 +1,22 @@
-h1 {
-    color: orange;
+:root {
+    --mainColour: rgb(129, 129, 212);
+}
+
+/* navigation */
+
+nav {
+    width: 100vw;
+    height: 65px;
+    background: var(--mainColour);
+    padding: 0 12px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 8px;
 }
