@@ -49,10 +49,16 @@ nav ul li {
     margin: 0 8px;
     color: white;
     cursor: pointer;
-    transition: 0.5s;
+    
 }
 
-nav ul li:hover {
+a {
+   color: white; 
+   transition: 0.5s;
+}
+
+a:hover {
+    text-decoration: none;
     color: var(--mainColour);
 }
 
