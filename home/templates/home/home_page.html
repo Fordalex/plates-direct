@@ -7,8 +7,55 @@ Home
 
 {% block content %}
 
-<h1>Working</h1>
+<img src="{% static 'media/header-bg.jpg' %}" class="header-image">
 
-<img src="{% static 'media/front-car-close-up.jpeg' %}">
+<div class="header-content">
+    <h1 class="text-white">Personalised Registrations</h1>
+
+    <p class="text-white">The DVLA is introducing new legislation for the UK’s number plates from the 1st September 2021
+        and new plates
+        will
+        become mandatory. The new plates will have improved durability and enhanced compatibility with automatic number
+        plate recognition (ANPR) cameras.</p>
+
+    <button>Create Plate</button>
+
+</div>
+
+
+
+
+<section class="page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Personalised Registrations</h2>
+                <p class="section-subheading mb-0 text-muted">asdfasdf</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4 mt-5">
+                <img src="https://img.icons8.com/fluent/65/000000/maintenance.png" />
+                <h4 class="service-heading">Tool Kits</h4>
+                <p class="text-muted">We have a range of different tinting colours and opacitys available. Special
+                    requests will take 2-3 days before fitting.</p>
+                <button class="tinted-quote-btn" href="contact.html">How to Fit</button>
+            </div>
+            <div class="col-md-4 mt-5">
+                <img src="https://img.icons8.com/fluent/65/000000/car.png" />
+                <h4 class="service-heading">Registration</h4>
+                <p class="text-muted">more information.</p>
+                <button class="tinted-quote-btn" href="contact.html">Create Plate</button>
+            </div>
+            <div class="col-md-4 mt-5">
+                <img src="https://img.icons8.com/fluent/65/000000/best-seller.png" />
+                <h4 class="service-heading">Personal Customer Service</h4>
+                <p class="text-muted">More information.</p>
+                <button class="tinted-quote-btn" href="contact.html">Contact Us</button>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock %}

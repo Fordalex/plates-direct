@@ -1,5 +1,7 @@
 ## Plates Direct
 
+Time: 2 hours.
+
 1. Creating a virtual environment
 
    python3 -m venv .venv

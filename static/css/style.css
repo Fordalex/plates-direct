@@ -1,5 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Montserrat:wght@700&family=Ubuntu&display=swap');
 :root {
-    --mainColour: rgb(129, 129, 212);
+    --mainColour: #6bb0df;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p,a,li,span {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#logo {
+    font-family: 'Lobster Two', cursive;
+    font-size: 1.5em;
+    color: var(--mainColour);
+}
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+
+}
+
+#page-content {
+    max-width: 1600px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
 }
 
 /* navigation */
@@ -7,7 +35,7 @@
 nav {
     width: 100vw;
     height: 65px;
-    background: var(--mainColour);
+    background-color: black;
     padding: 0 12px;
 }
 
@@ -19,4 +47,29 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+nav ul li:hover {
+    color: var(--mainColour);
+}
+
+/* home */
+
+.header-image {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    max-height: 470px;
+    object-fit: cover;
+    object-position: 50% 65%;
+}
+
+.header-content {
+    height: 500px;
 }
