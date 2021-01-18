@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'design_plate',
+    'faqs',
 ]
 
 MIDDLEWARE = [
