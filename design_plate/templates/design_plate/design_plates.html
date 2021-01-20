@@ -12,34 +12,19 @@ Design Plates
 </p>
 
 
-<div class="py-4 d-flex justify-content-center">
-    <div>
-        <p class="mb-2"><small class="text-danger">Please make sure you add the spaces in the correct
-                position.</small></p>
-        <input class="form-control" placeholder="REG PLATE" id="view-plates" maxlength="8">
-    </div>
 
-</div>
-
-<div class="d-flex justify-content-center py-5 number-plate-wrapper">
-    <div>
-        <div class="number-plate-container number-plate-container-yellow mb-2">
-            <p class="number-plate-font" id="yellow-number-plate">PL35 DCT</p>
+<div class="row number-plate-wrapper">
+    <div class="col-4 bg-dark p-5">
+        <div class="p-0 d-flex justify-content-center">
+            <div class="p-0 container-fluid">
+                <p class="mb-2"><small class="text-danger">Please make sure you add the spaces in the correct
+                        position.</small></p>
+                <input class="form-control" placeholder="REG PLATE" id="view-plates" maxlength="8">
+            </div>
         </div>
-        <div class="number-plate-container number-plate-container-white">
-            <p class="number-plate-font" id="white-number-plate">PL35 DCT</p>
-        </div>
-    </div>
-</div>
-
-<div class="bg-dark plates-checkout-wrapper row px-0 py-4 m-0">
-    <div class="col-6">
-
-    </div>
-    <div class="col-6">
         <p class="price">Price: <b>£19.99</b></p>
-        <button class="btn bg-main">Checkout <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="20" height="20" viewBox="0 0 172 172" style=" fill:#000000;">
+        <button class="btn bg-main">Checkout <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20"
+                height="20" viewBox="0 0 172 172" style=" fill:#000000;">
                 <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
                     font-family="none" font-weight="none" font-size="none" text-anchor="none"
@@ -54,8 +39,17 @@ Design Plates
                 </g>
             </svg></button>
     </div>
+    <div class="col-8 d-flex justify-content-center py-5">
+        <div>
+            <div class="number-plate-container number-plate-container-yellow mb-2">
+                <p class="number-plate-font" id="yellow-number-plate">PL35 DCT</p>
+            </div>
+            <div class="number-plate-container number-plate-container-white">
+                <p class="number-plate-font" id="white-number-plate">PL35 DCT</p>
+            </div>
+        </div>
+
+    </div>
 </div>
-
-
 
 {% endblock %}
