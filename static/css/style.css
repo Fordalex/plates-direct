@@ -55,6 +55,7 @@ nav ul li {
 a {
    color: white; 
    transition: 0.5s;
+   text-decoration: none;
 }
 
 a:hover {
@@ -74,6 +75,11 @@ a:hover {
 }
 
 /* footer */
+
+footer {
+    background-color: black;
+    color: white;
+}
 
 .fd-logo-size {
     width: 45px;
