@@ -3,10 +3,13 @@
 ### Time
 
 2Hours 30Mins # 17/01/2021 # 10:00pm - 12:30pm
+Set up the project.
 
 1Hour 33Mins # 18/01/2021 # 20:40pm - 21:14pm / 13:26pm - 12:25pm
+Started on the home page, content and layout.
 
-20/01/2021 # 09:09am - 10:40 / 11:00 - 11:40 / 
+20/01/2021 # 09:09am - 10:40am / 11:00am - 11:50am / 14:30pm - 
+Added the registration input and style. 
 
 Time: 2.5 hours.
 

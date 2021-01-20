@@ -13,7 +13,6 @@ p,a,li,span {
 
 body {
     overflow-x: hidden;
-    width: 100vw;
 
 }
 
@@ -24,10 +23,13 @@ body {
     margin: auto;
 }
 
+.bg-main {
+    background-color: var(--mainColour);
+}
+
 /* navigation */
 
 nav {
-    width: 100vw;
     height: 65px;
     background-color: black;
     padding: 0 24px;
@@ -66,12 +68,24 @@ a:hover {
 /* home */
 
 .header-content {
-    height: 500px;
+    height: 600px;
+    position: relative;
 }
 
 .title {
-    font-size: 3em;
+    font-size: 3.2em;
     font-weight: 700;
+}
+
+/* replacement plates */
+
+.price {
+    color: rgb(223, 223, 223);
+    font-size: 1.5em;
+}
+
+.price b {
+    color: white;
 }
 
 /* footer */
@@ -85,10 +99,13 @@ footer {
     width: 45px;
 }
 
-.footer-nav {
-    
-}
-
 .footer-nav a {
     color: grey;
+    margin-left: 15px;
+    font-size: 0.9em;
+    color: grey;
+}
+
+.copyright {
+    width: 300px;
 }
