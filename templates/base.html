@@ -47,18 +47,18 @@
     </div>
 
     <nav class="d-flex justify-content-between align-items-center">
-        <div id="logo">
+        <div id="logo" class="ml-2">
             Plates Direct
         </div>
         <ul>
             <li><a href="{% url 'home_page' %}">Home</a></li>
-            <li><a href="{% url 'design_plates' %}">Design Plates</a></li>
+            <li><a href="{% url 'design_plates' %}">Replacement Plates</a></li>
             <li><a href="{% url 'faqs' %}">FAQS</a></li>
             <li><a>About Us</a></li>
             <li><a>Contact Us</a></li>
             <li><a>Other Services</a></li>
         </ul>
-        <div class="mr-4">
+        <div>
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172"
                 style=" fill:#000000;">
                 <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -83,7 +83,59 @@
     </div>
 
 
-    <footer>
+    <footer class="p-3 py-4">
+        <div class="row m-0 p-0">
+            <div class="col-12 col-md-4">
+                <h4 class="text-center mt-4 mb-3">Social Media</h4>
+                <p>...</p>
+                <div class="d-flex justify-content-center">
+                    <a href="" class="m-0" target="_blank">
+                        <img src="https://img.icons8.com/color/25/000000/facebook.png">
+                    </a>
+                    <a href="" class="m-0 mx-1" target="_blank">
+                        <img src="https://img.icons8.com/fluent/25/000000/instagram-new.png">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mt-4">
+                <hr class="d-block d-md-none">
+                <h4 class="text-center mt-1 mb-3">Created By <img class="fd-logo-size ml-2"
+                        src="{% static 'media/fordsdevelopment_logo.svg' %}" alt="Card image cap"></h4>
+                <p>I also create websites and web applications for businesses, big or small, please see my main website
+                    for more information!</p>
+                <div class="d-flex justify-content-center">
+                    <a href="https://www.fordsdevelopment.co.uk/" target="_blank" class="btn btn-dark">Go To
+                        Fordsdevelopment</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mt-4">
+                <hr class="d-block d-md-none">
+                <h4 class="text-center mt-1 mb-3">Acknowledgements</h4>
+                <p>This web application would of never been created without the following platforms.</p>
+                <ul class="acknowledgements-list">
+                    <li><img src="https://img.icons8.com/fluent/22/000000/icons8-new-logo.png"> <a target="_blank"
+                            href="https://icons8.com/icons/set/create-icon" class="text-dark">Create Icon icon</a> icon
+                        by <a target="_blank" href="https://icons8.com" class="text-dark">Icons8</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+        <div class="col-12 d-flex justify-content-between align-items-center pb-4">
+            <div></div>
+            <small class="m-0 d-flex justify-content-center text-small"><span>Copyright © 2021 Plates
+                    Direct</span></small>
+            <nav class="footer-nav">
+                <a>Home</a>
+                <a>Home</a>
+                <a>Home</a>
+                <a>Home</a>
+            </nav>
+        </div>
+
+
 
     </footer>
 

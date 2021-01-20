@@ -11,12 +11,6 @@ p,a,li,span {
     font-family: 'Ubuntu', sans-serif;
 }
 
-#logo {
-    font-family: 'Lobster Two', cursive;
-    font-size: 1.5em;
-    color: var(--mainColour);
-}
-
 body {
     overflow-x: hidden;
     width: 100vw;
@@ -36,7 +30,7 @@ nav {
     width: 100vw;
     height: 65px;
     background-color: black;
-    padding: 0 12px;
+    padding: 0 24px;
 }
 
 nav ul {
@@ -52,6 +46,12 @@ nav ul li {
     
 }
 
+#logo {
+    font-family: 'Lobster Two', cursive;
+    font-size: 1.5em;
+    color: var(--mainColour);
+}
+
 a {
    color: white; 
    transition: 0.5s;
@@ -64,18 +64,25 @@ a:hover {
 
 /* home */
 
-.header-image {
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
-    max-height: 470px;
-    object-fit: cover;
-    object-position: 50% 65%;
-}
-
 .header-content {
     height: 500px;
+}
+
+.title {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+/* footer */
+
+.fd-logo-size {
+    width: 45px;
+}
+
+.footer-nav {
+    
+}
+
+.footer-nav a {
+    color: grey;
 }
