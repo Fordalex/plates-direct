@@ -1,10 +1,20 @@
 ## Plates Direct
 
+### Time
+
 2Hours 30Mins # 17/01/2021 # 10:00pm - 12:30pm
+
 1Hour 33Mins # 18/01/2021 # 20:40pm - 21:14pm / 13:26pm - 12:25pm
-20/01/2021 # 09:09am - 
+
+20/01/2021 # 09:09am - 10:40 / 11:00 - 11:40 / 
 
 Time: 2.5 hours.
+
+### Feature left to implement
+
+- When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
+
+### Django project setup
 
 Creating a virtual environment
 
