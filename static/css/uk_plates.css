@@ -1,0 +1,40 @@
+.number-plate-container {
+    border: solid black 2px;
+    border-radius: 8px;
+    display: block;
+    padding: 0px 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.number-plate-container::before {
+    content: "";
+    display: inline-block;
+    width: 97%;
+    height: 90%;
+    position: absolute;
+    z-index: -1;
+    top: 5%;
+    left: 1.5%;
+    border-radius: 5px;
+    background: linear-gradient( rgba(255, 255, 255, 0.5),  rgba(255, 255, 255, 0));
+}
+
+.number-plate-container-yellow {
+    background-color: #ffdf20;
+}
+
+.number-plate-container-white{
+    background-color: rgb(255, 255, 255);
+}
+
+
+.number-plate-font {
+    font-family: ukNumberPlate;
+    font-size: 5em;
+    padding: 0 25px;
+    margin: 0;
+    letter-spacing: 2px;
+    line-height: 115%;
+}
