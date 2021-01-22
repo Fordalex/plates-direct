@@ -8,25 +8,34 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get('bag', {})
 
-    for item, value in bag.items():
+    # for item, value in bag.items():
+    #     product = item
+    #     if product == 'both' or 'front' or 'back':
+    #         for reg in value:
+    #             
+
+    #             
+
+    for item, dic in bag.items():
         product = item
-        if product == 'both' or 'front' or 'back':
-            for reg in value:
-                if product == 'both': 
-                    product_cost = 19.99
-                elif product == 'front' or 'back':
-                    product_cost = 10.99
-                elif product == 'fitting_kit':
-                    product_cost = 4.99
+        if product == 'both': 
+            product_cost = 19.99
+        elif product == 'front' or 'back':
+            product_cost = 10.99
+        elif product == 'fitting_kit':
+            product_cost = 4.99
 
-                total += product_cost
+        bag_items.append(
+            {
+                'reg_number': bag[product]['reg_number'],
+                'item': bag[product]['plates'],
+                'cost': product_cost,
+                'quantity': 1,
+                'id': product
+            }
+        )
+        total += product_cost
 
-                bag_items.append({
-                    'item': product,
-                    'quantity': 1,
-                    'reg_number': value[0],
-                    'cost': product_cost
-                })
         
 
     if total < settings.FREE_DELIVERY_THERESHOLD:

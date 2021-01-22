@@ -8,49 +8,93 @@ Bag
 
 {% block content %}
 
-<h3>Shopping Bag</h3>
-<hr>
+<h3 class="p-3 m-0">Shopping Bag</h3>
 
+<div class="row m-0 p-0 bg-dark justify-content-center">
+    <div class="col-9 m-0 p-3">
+        {% if bag_items %}
+        <table class="container-fluid shopping-bag-table">
+            <tr>
+                <th>Product Info</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
 
-{% if bag_items %}
-{% for product in bag_items %}
+            {% for product in bag_items %}
+            <tr>
+                <td>
+                    <h5 class="capitalize">{{ product.item }}</h5>
+                    {% if product.item == 'front' %}
+                    <div class="d-flex justify-content-center">
+                        <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
+                            <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
+                        </div>
+                    </div>
+                    {% elif product.item == 'back' %}
+                    <div class="d-flex justify-content-center">
+                        <div id="viewFrontPlate" class="number-plate-container number-plate-container-white mb-2">
+                            <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="d-flex justify-content-center align-items-center py-5">
+                        <div id="plateContainer">
+                            <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
+                                <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}
+                                </p>
+                            </div>
+                            <div id="viewBackPlate" class="number-plate-container number-plate-container-white">
+                                <p class="number-plate-font" id="yellow-number-plate">{{ product.reg_number }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </td>
+                <td>
+                    <p>£{{ product.cost }}</p>
+                </td>
+                <td>
+                    <p>{{ product.quantity }}</p>
+                </td>
+                <td>
+                    <p>£{{ product.cost }}</p>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="{% url 'remove_from_bag' product.id %}">Remove</a>
+                </td>
+            </tr>
+            {% endfor %}
 
-<h3>{{ product.item }}</h3>
-<p>Quantity: {{ product.quantity }}</p>
-{% if product.item == 'front' %}
-<div class="d-flex justify-content-center">
-    <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
-        <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
-    </div>
-</div>
-{% elif product.item == 'back' %}
-<div class="d-flex justify-content-center">
-    <div id="viewFrontPlate" class="number-plate-container number-plate-container-white mb-2">
-        <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
-    </div>
-</div>
-{% else %}
-<div class="d-flex justify-content-center align-items-center py-5">
-    <div id="plateContainer">
-        <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
-            <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
+        </table>
+        {% else %}
+        <div class="bg-light p-3">
+            <p>Your bag is empty.</p>
+            <a class="btn bg-main" href="{% url 'design_plates' %}">Start Shopping</a>
         </div>
-        <div id="viewBackPlate" class="number-plate-container number-plate-container-white">
-            <p class="number-plate-font" id="yellow-number-plate">{{ product.reg_number }}</p>
+
+        {% endif %}
+
+
+    </div>
+    {% if bag_items %}
+    <div class="col-3 m-0 p-0">
+        <div class="bg-light m-3 p-3">
+            <a class="btn btn-danger" href="{% url 'empty_basket' %}">Empty Basket</a>
+            <p>Total Items: {{ product_count }}</p>
+            <p>Total Item cost: £ {{ total }}</p>
+            <p>Delivery: £{{ delivery }}</p>
+            <h5>Total £{{ grand_total }}</h5>
+            <a class="text-dark btn btn-info" href="{% url 'design_plates' %}">Check Out</a>
         </div>
     </div>
+    {% endif %}
 </div>
-{% endif %}
-<p>£{{ product.cost }}</p>
-<hr>
 
-{% endfor %}
-{% else %}
-<p>Bag is empty.</p>
-{% endif %}
 
-<h5>Total £{{ total }}</h5>
-<a class="text-dark btn btn-info" href="{% url 'design_plates' %}">Keep Shopping</a>
+
 
 
 {% endblock %}

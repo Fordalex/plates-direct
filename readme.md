@@ -3,21 +3,26 @@
 ### Time
 
 2Hours 30Mins # 17/01/2021 # 10:00pm - 12:30pm
-Set up the project.
+    Set up the project.
 
 1Hours 33Mins # 18/01/2021 # 20:40pm - 21:14pm / 13:26pm - 12:25pm
-Started on the home page, content and layout.
+    Started on the home page, content and layout.
 
 3Hours 18Mins # 20/01/2021 # 09:09am - 10:40am / 11:00am - 11:50am / 14:30pm - 15:27pm
-Added the registration input and style. 
+    Added the registration input and style. 
 
 51Mins # 22/01/2021 # 13:56pm - 14: 47pm
-Set up the context file for the shopping bag.
+    Set up the context file for the shopping bag.
 
 1Hour 20Mins # 22/01/2021 # 15:00pm - 16:20pm
-Added the options for the customer to only purchase/view one or muliple plates and the logic for the user to add items to the basket.
+    Added the options for the customer to only purchase/view one or muliple plates and the logic for the user to add items to the basket.
 
-22/01/2021 # 16:50pm - 
+40Mins # 22/01/2021 # 16:50pm - 17:30pm
+    Appended the items for the basket into the shopping page, started to style the items and added the total cost.
+
+15 Mins Added more styling to the bag page.
+
+22/01/2021 # 21:05 - 
 
 23/01/2021
 Styling the home page.

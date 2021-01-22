@@ -1,0 +1,15 @@
+.shopping-bag-table {
+    background-color: white;
+}
+
+.shopping-bag-table tr {
+    border-bottom: solid grey 1px;
+}
+
+.shopping-bag-table th {
+    padding: 10px;
+}
+
+.shopping-bag-table td {
+    padding: 10px;
+}
