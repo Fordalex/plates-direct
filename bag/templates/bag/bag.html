@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Bag
+{% endblock %}
+
+{% block content %}
+
+<h3>Shopping Bag</h3>
+<hr>
+
+
+{% if bag_items %}
+<p>These are the items inside your bag.</p>
+{% else %}
+<p>Bag is empty.</p>
+{% endif %}
+
+<a class="text-dark btn btn-info" href="{% url 'design_plates' %}">Keep Shopping</a>
+
+
+{% endblock %}

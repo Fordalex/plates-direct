@@ -11,6 +11,14 @@ Started on the home page, content and layout.
 3Hours 18Mins # 20/01/2021 # 09:09am - 10:40am / 11:00am - 11:50am / 14:30pm - 15:27pm
 Added the registration input and style. 
 
+22/01/2021 # 13:56pm - 
+
+23/01/2021
+Styling the home page.
+
+24/01/2021
+Start adding the basket logic.
+
 Time: 7Hours 21Mins.
 
 ### Feature left to implement
@@ -92,6 +100,57 @@ In the project urls.py
         path("", views.VIEWNAME, name="VIEWNAME")
     ] 
 
+### The Shopping Bag
+
+Create a new app call 'bag'
+
+    django-admin startapp bag
+
+Added the app to the installed apps inside the settings.py file.
+
+After the new app has been created, then create a new file inside the bag app called 'context.py'
+
+    from decimal import Decimal
+    from django.conf import settings
+
+    def bag_contents(request):
+
+        bag_items = []
+        total = 0
+        product_count = 0
+
+        if total < settings.FREE_DELIVERY_THERESHOLD:
+            delivery = total + STANDARD_DELIVERY
+            free_delivery_delta = settings.FREE_DELIVERY_THERESHOLD - total
+        else:
+            delivery = 0
+            free_delivery_delta = 0
+
+        grand_total = delivery + total
+
+        context = {
+            'bag_items': bag_items,
+            'total': total,
+            'product_count': product_count,
+            'delivery': delivery,
+            'free_delivery_delta': free_delivery_delta,
+            'free_delivery_threshold': settings.FREE_DELIVERY_THERESHOLD,
+            'grand_total': grand_total,
+        }
+
+        return context
+
+This is created so that is dictionary will be available for every page inside the project.
+
+In the settings file add to the 'context_processors': 
+
+    'bag.contexts.bag_contents',
+
+Also, add the variables FREE_DELIVERY_THERESHOLD & STANDARD_DELIVERY in the settings.py file.
+
+This dictionary can now be viewed on every page on the project. Access the value of the total with this syntax:
+
+    {{ total }}
 
 ### Acknowledgments
 
