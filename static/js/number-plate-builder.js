@@ -1,5 +1,5 @@
-$(document).on('keyup','#view-plates', function() {
-    numberPlate = $('#view-plates').val();
+$(document).on('keyup','#reg_number', function() {
+    numberPlate = $('#reg_number').val();
     updatePlates()
 });
 
@@ -9,20 +9,20 @@ var viewPlates = 'both';
 
 function updatePlates() {
     var frontPlate = `
-            <div id="viewBackPlate" class="number-plate-container number-plate-container-yellow mb-2">
+            <div id="viewBackPlate" class="number-plate-container number-plate-container-white ">
                 <p class="number-plate-font" id="yellow-number-plate">${numberPlate}</p>
             </div>
     `;
 
     var backPlate = `
-                <div id="viewFrontPlate" class="number-plate-container number-plate-container-white">
+                <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
                     <p class="number-plate-font" id="white-number-plate">${numberPlate}</p>
                 </div>
     `;
 
     if (viewPlates == 'both') {
-        $('#plateContainer').html(frontPlate);
-        $('#plateContainer').append(backPlate);
+        $('#plateContainer').html(backPlate);
+        $('#plateContainer').append(frontPlate);
         $('#price').html('£19.99');
     } else if (viewPlates == 'front') {
         $('#plateContainer').html(frontPlate);
@@ -36,16 +36,19 @@ function updatePlates() {
 
 $(document).on('click', '#frontPlateButton', function() {
     viewPlates = 'front';
+    $('#item').val('front');
     updatePlates()
 });
 
 $(document).on('click', '#backPlateButton', function() {
     viewPlates = 'back';
+    $('#item').val('back');
     updatePlates()
 });
 
 $(document).on('click', '#bothPlateButton', function() {
     viewPlates = 'both';
+    $('#item').val('both');
     updatePlates()
 });
 
