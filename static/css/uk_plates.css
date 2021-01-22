@@ -46,3 +46,9 @@
     text-transform: uppercase;
     text-align: center;
 }
+
+.toggle-plate-button {
+    background-color: white;
+    border-radius: 1px;
+    padding: 7px;
+}

@@ -29,10 +29,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/uk_plates.css' %}">
     <link rel="stylesheet" href="{% static 'css/arrow-animation.css' %}">
     <link rel="stylesheet" href="{% static 'css/overide-bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Uk number plate font -->
     <style>
         @font-face {
@@ -81,6 +81,9 @@
             <small class="text-center">£{{ total }}</small>
         </a>
     </nav>
+
+    <p class="bg-warning p-2 m-0">Spend £{{ free_delivery_delta }} to get free delivery!
+    </p>
 
     <div id="page-content">
         {% block content %}

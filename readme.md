@@ -1,4 +1,4 @@
-## Plates Direct
+# Plates Direct
 
 ### Time
 
@@ -11,7 +11,11 @@ Started on the home page, content and layout.
 3Hours 18Mins # 20/01/2021 # 09:09am - 10:40am / 11:00am - 11:50am / 14:30pm - 15:27pm
 Added the registration input and style. 
 
-22/01/2021 # 13:56pm - 
+22/01/2021 # 13:56pm - 14: 47pm
+Set up the context file for the shopping bag.
+
+22/01/2021 # 15:00pm - 
+Added the options for the customer to only purchase/view one or muliple plates.
 
 23/01/2021
 Styling the home page.
@@ -25,31 +29,31 @@ Time: 7Hours 21Mins.
 
 - When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
 
-### Django project setup
+## Django project setup
 
 Creating a virtual environment
 
-   python3 -m venv .venv
+    python3 -m venv .venv
 
 Activate the environment
 
-   source .venv/bin/activate
+    source .venv/bin/activate
 
 Install django
 
-   pip3 install django
+    pip3 install django
 
 Start a new project
 
-   django-admin startproject PROJECTNAME .
+    django-admin startproject PROJECTNAME .
 
 Start a new app
 
-   django-admin startapp APPNAME
+    django-admin startapp APPNAME
 
 Install new app (settings.py)
 
-   INSTALLED_APPS = [
+    INSTALLED_APPS = [
         "django.contrib.staticfiles",
         "APPNAME"
     ]
@@ -61,7 +65,7 @@ Import (settings.py)
 
 Create path to tamplates
 
-   "DIRS": [
+    "DIRS": [
             os.path.join(BASE_DIR, "templates")
     ],
 
@@ -91,7 +95,7 @@ In the project urls.py
         path("", include("APPNAME.urls")),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-- Create a urls.py in the APPNAME
+Create a urls.py in the APPNAME
 
     from django.urls import path
     from . import views
@@ -100,7 +104,7 @@ In the project urls.py
         path("", views.VIEWNAME, name="VIEWNAME")
     ] 
 
-### The Shopping Bag
+## The Shopping Bag
 
 Create a new app call 'bag'
 

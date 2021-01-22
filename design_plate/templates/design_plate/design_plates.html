@@ -7,23 +7,23 @@ Design Plates
 
 {% block content %}
 
-<p class="bg-warning p-2 m-0">Buy within the next <span class="text-white">02:12:32</span> and recieve your plates
-    tomorrow!
-</p>
-
-
 
 <div class="row number-plate-wrapper">
     <div class="col-4 bg-dark p-5">
         <div class="p-0 d-flex justify-content-center">
             <div class="p-0 container-fluid">
+                <div class="mb-4 d-flex justify-content-between">
+                    <button class="container-fluid toggle-plate-button" id="frontPlateButton">Front</button>
+                    <button class="container-fluid mx-2 toggle-plate-button" id="backPlateButton">Back</button>
+                    <button class="container-fluid toggle-plate-button" id="bothPlateButton">Both</button>
+                </div>
                 <p class="mb-2"><small class="text-danger">Please make sure you add the spaces in the correct
                         position.</small></p>
                 <input class="form-control" placeholder="REG PLATE" id="view-plates" maxlength="8">
             </div>
         </div>
-        <p class="price">Price: <b>£19.99</b></p>
-        <button class="btn bg-main">Checkout <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20"
+        <p class="price mt-3">Price: <b id="price">£19.99</b></p>
+        <button class="btn bg-main">Add To Basket <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20"
                 height="20" viewBox="0 0 172 172" style=" fill:#000000;">
                 <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -39,12 +39,12 @@ Design Plates
                 </g>
             </svg></button>
     </div>
-    <div class="col-8 d-flex justify-content-center py-5">
-        <div>
-            <div class="number-plate-container number-plate-container-yellow mb-2">
+    <div class="col-8 d-flex justify-content-center align-items-center py-5">
+        <div id="plateContainer">
+            <div id="viewBackPlate" class="number-plate-container number-plate-container-yellow mb-2">
                 <p class="number-plate-font" id="yellow-number-plate">PL35 DCT</p>
             </div>
-            <div class="number-plate-container number-plate-container-white">
+            <div id="viewFrontPlate" class="number-plate-container number-plate-container-white">
                 <p class="number-plate-font" id="white-number-plate">PL35 DCT</p>
             </div>
         </div>
