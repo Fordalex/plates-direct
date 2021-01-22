@@ -79,13 +79,14 @@ a:hover {
 
 /* replacement plates */
 
-.price {
+.price-style {
     color: rgb(223, 223, 223);
     font-size: 1.5em;
 }
 
-.price b {
+.price-style b {
     color: white;
+    font-size: 1.5em;
 }
 
 /* footer */

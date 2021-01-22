@@ -23,13 +23,13 @@ function updatePlates() {
     if (viewPlates == 'both') {
         $('#plateContainer').html(backPlate);
         $('#plateContainer').append(frontPlate);
-        $('#price').html('£19.99');
+        $('.price').html('£19.99');
     } else if (viewPlates == 'front') {
         $('#plateContainer').html(frontPlate);
-        $('#price').html('£10.99');
+        $('.price').html('£10.99');
     } else {
         $('#plateContainer').html(backPlate);
-        $('#price').html('£10.99');
+        $('.price').html('£10.99');
     }
 
 }

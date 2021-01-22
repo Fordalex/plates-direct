@@ -13,11 +13,43 @@ Bag
 
 
 {% if bag_items %}
-<p>These are the items inside your bag.</p>
+{% for product in bag_items %}
+
+<h3>{{ product.item }}</h3>
+<p>Quantity: {{ product.quantity }}</p>
+{% if product.item == 'front' %}
+<div class="d-flex justify-content-center">
+    <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
+        <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
+    </div>
+</div>
+{% elif product.item == 'back' %}
+<div class="d-flex justify-content-center">
+    <div id="viewFrontPlate" class="number-plate-container number-plate-container-white mb-2">
+        <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
+    </div>
+</div>
+{% else %}
+<div class="d-flex justify-content-center align-items-center py-5">
+    <div id="plateContainer">
+        <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
+            <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
+        </div>
+        <div id="viewBackPlate" class="number-plate-container number-plate-container-white">
+            <p class="number-plate-font" id="yellow-number-plate">{{ product.reg_number }}</p>
+        </div>
+    </div>
+</div>
+{% endif %}
+<p>£{{ product.cost }}</p>
+<hr>
+
+{% endfor %}
 {% else %}
 <p>Bag is empty.</p>
 {% endif %}
 
+<h5>Total £{{ total }}</h5>
 <a class="text-dark btn btn-info" href="{% url 'design_plates' %}">Keep Shopping</a>
 
 
