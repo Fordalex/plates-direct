@@ -1,0 +1,2 @@
+import os
+os.environ.setdefault('DATABASE_URL', 'postgres://frkzzinjuvyraf:d7d82157e985a7995274419e020a3943eeeb0cb21e915f1aca9e6a21129e57a6@ec2-54-75-225-52.eu-west-1.compute.amazonaws.com:5432/d68pqol6iqmtrt')

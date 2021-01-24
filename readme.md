@@ -225,6 +225,42 @@ Then create the requirements.txt file
 
     pip freeze --local > requirements.txt
 
+### Setting up the database
+
+Create an env.py file
+
+    import os
+    os.environ.setdefault('DATABASE_URL', 'postgres://')
+
+Install the following:
+
+    pip3 install dj_database_url
+
+Add to the settings:
+
+    from os import path
+    import dj_database_url
+    if path.exists('env.py'):
+        import env
+
+In the settings.py file chagned the database setting to:
+
+    if "DATABASE_URL" in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        print("postgres URL not found, using sqlite instead")
+        DATABASES = {
+            'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+
+Then make the migrations:
+
+    python3 manage.py migrate
 
 ### Acknowledgments
 
