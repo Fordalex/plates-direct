@@ -30,8 +30,6 @@ def add_to_bag(request):
             'item': item,
         }
 
-    print(request.session['bag'])
-
     request.session['bag'] = bag
     id_count += 1
     request.session['id_count'] = id_count

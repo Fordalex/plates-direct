@@ -3,47 +3,70 @@
 ### Time
 
 2Hours 30Mins # 17/01/2021 # 10:00pm - 12:30pm
+    
     Set up the project.
 
 1Hours 33Mins # 18/01/2021 # 20:40pm - 21:14pm / 13:26pm - 12:25pm
+    
     Started on the home page, content and layout.
 
 3Hours 18Mins # 20/01/2021 # 09:09am - 10:40am / 11:00am - 11:50am / 14:30pm - 15:27pm
+    
     Added the registration input and style. 
 
 51Mins # 22/01/2021 # 13:56pm - 14: 47pm
+
     Set up the context file for the shopping bag.
 
 1Hour 20Mins # 22/01/2021 # 15:00pm - 16:20pm
+
     Added the options for the customer to only purchase/view one or muliple plates and the logic for the user to add items to the basket.
 
 40Mins # 22/01/2021 # 16:50pm - 17:30pm
+
     Appended the items for the basket into the shopping page, started to style the items and added the total cost.
 
 15 Mins # 22/01/2021
+
     Added more styling to the bag page.
 
 1Hour 34Mins # 22/01/2021 # 21:05 - 22:39
+
     Added the logic so the user can empty the basket and remove individual items.
 
 24/01/2021 # 07:00am - 08:33am
+
     Added more styling to the checkout page, fixed the items id so users can delete their items and create duplicates. Added fitting kit img for later. Fixed floating point error.
 
 24/01/2021 # 09:43am - 10:50am
+
     Added the logic for the fitting kits to be added to the basket on purchase.
 
-24/01/2021 # 12:07 - 
+24/01/2021 # 12:07 - 13:18p,
 
+    Hosted the site on heroku.
 
-Host, toasts.
-
+21/01/2021 # 18:14pm - 
 
 
 Time: 7Hours 21Mins.
 
 ### Feature left to implement
 
+- Add toasts.
+
 - When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
+
+- Animate on scroll.
+
+- Add the navigation for mobile.
+
+- Add content for the FAQs page.
+
+- Add the payment logic and page.
+
+- Add page for user to add documents on checkout.
+
 
 ## Django project setup
 
