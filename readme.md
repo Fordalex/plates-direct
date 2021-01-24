@@ -20,15 +20,15 @@
 40Mins # 22/01/2021 # 16:50pm - 17:30pm
     Appended the items for the basket into the shopping page, started to style the items and added the total cost.
 
-15 Mins Added more styling to the bag page.
+15 Mins # 22/01/2021
+    Added more styling to the bag page.
 
-22/01/2021 # 21:05 - 
+1Hour 34Mins # 22/01/2021 # 21:05 - 22:39
+    Added the logic so the user can empty the basket and remove individual items.
 
-23/01/2021
-Styling the home page.
+24/01/2021 # 07:00am - 
 
-24/01/2021
-Start adding the basket logic.
+
 
 Time: 7Hours 21Mins.
 

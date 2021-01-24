@@ -82,9 +82,11 @@
             <small class="text-center">£{{ total }}</small>
         </a>
     </nav>
-
-    <p class="bg-warning p-2 m-0">Spend £{{ free_delivery_delta }} to get free delivery!
-    </p>
+    {% if free_delivery_delta > 0 %} <p class="bg-warning p-2 m-0">Spend £{{ free_delivery_delta }} to get free
+        delivery!</p>
+    {% else %}
+    <p class="bg-warning p-2 m-0">Your entitled to free delivery!</p>
+    {% endif %}
 
     <div id="page-content">
         {% block content %}
@@ -111,7 +113,8 @@
                 <hr class="d-block d-md-none">
                 <h4 class="text-center mt-1 mb-3">Created By <img class="fd-logo-size ml-2"
                         src="{% static 'media/fordsdevelopment_logo.svg' %}" alt="Card image cap"></h4>
-                <p>I also create websites and web applications for businesses, big or small, please see my main website
+                <p>I also create websites and web applications for businesses, big or small, please see my main
+                    website
                     for more information!</p>
                 <div class="d-flex justify-content-center">
                     <a href="https://www.fordsdevelopment.co.uk/" target="_blank" class="btn btn-dark">Go To
@@ -124,7 +127,8 @@
                 <p>This web application would of never been created without the following platforms.</p>
                 <ul class="acknowledgements-list">
                     <li><img src="https://img.icons8.com/fluent/22/000000/icons8-new-logo.png"> <a target="_blank"
-                            href="https://icons8.com/icons/set/create-icon" class="text-dark">Create Icon icon</a> icon
+                            href="https://icons8.com/icons/set/create-icon" class="text-dark">Create Icon icon</a>
+                        icon
                         by <a target="_blank" href="https://icons8.com" class="text-dark">Icons8</a></li>
 
                 </ul>

@@ -11,11 +11,10 @@ def view_bag(request):
 def add_to_bag(request):
     """ Add the item to the shopping basket in the session. """
 
-    bag = {}
-
     quantity = 1
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
+    id_count = request.session.get('id_count', 0)
     reg_number = request.POST.get('reg_number')
     item = request.POST.get('item')
 
@@ -25,19 +24,21 @@ def add_to_bag(request):
     #     bag[item] = [reg_number]
 
     if reg_number in bag.keys():
-        bag[reg_number + ' Duplicate' + str(random.randint(999, 99999))] = {
+        bag[id_count] = {
                 'reg_number': reg_number,
                 'plates': item,
             }
     else:
-        bag[reg_number] = {
+        bag[id_count] = {
             'reg_number': reg_number,
             'plates': item,
         }
 
+    print(request.session['bag'])
 
     request.session['bag'] = bag
-    print(request.session['bag'])
+    id_count += 1
+    request.session['id_count'] = id_count
     return redirect(redirect_url)
 
 

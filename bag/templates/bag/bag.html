@@ -8,86 +8,102 @@ Bag
 
 {% block content %}
 
-<h3 class="p-3 m-0">Shopping Bag</h3>
+<h1 class="p-3 py-4 m-0 text-center">Shopping Kart</h1>
 
-<div class="row m-0 p-0 bg-dark justify-content-center">
-    <div class="col-9 m-0 p-3">
-        {% if bag_items %}
-        <table class="container-fluid shopping-bag-table">
-            <tr>
-                <th>Product Info</th>
-                <th>Price</th>
-                <th>Qty</th>
-                <th>Subtotal</th>
-                <th></th>
-            </tr>
+<div class="row m-0 p-3 bg-light justify-content-center">
+    <div class="col-7 m-0">
+        <div class="checkout-container">
+            {% if bag_items %}
+            <table class="container-fluid shopping-bag-table">
+                <tr>
+                    <th>Product Info</th>
+                    <th>Price</th>
+                    <th>Set</th>
+                    <th>Qty</th>
+                    <th>Subtotal</th>
+                </tr>
 
-            {% for product in bag_items %}
-            <tr>
-                <td>
-                    <h5 class="capitalize">{{ product.item }}</h5>
-                    {% if product.item == 'front' %}
-                    <div class="d-flex justify-content-center">
-                        <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
-                            <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
-                        </div>
-                    </div>
-                    {% elif product.item == 'back' %}
-                    <div class="d-flex justify-content-center">
-                        <div id="viewFrontPlate" class="number-plate-container number-plate-container-white mb-2">
-                            <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}</p>
-                        </div>
-                    </div>
-                    {% else %}
-                    <div class="d-flex justify-content-center align-items-center py-5">
-                        <div id="plateContainer">
-                            <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
-                                <p class="number-plate-font" id="white-number-plate">{{ product.reg_number }}
-                                </p>
-                            </div>
-                            <div id="viewBackPlate" class="number-plate-container number-plate-container-white">
-                                <p class="number-plate-font" id="yellow-number-plate">{{ product.reg_number }}
+                {% for product in bag_items %}
+                <tr>
+                    <td class="d-flex justify-content-center">
+                        {% if product.item == 'front' %}
+                        <div class="d-flex justify-content-center">
+                            <div id="viewFrontPlate"
+                                class="checkout-number-plate-container number-plate-container-yellow mb-2">
+                                <p class="checkout-number-plate-font" id="white-number-plate">{{ product.reg_number }}
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    {% endif %}
-                </td>
-                <td>
-                    <p>£{{ product.cost }}</p>
-                </td>
-                <td>
-                    <p>{{ product.quantity }}</p>
-                </td>
-                <td>
-                    <p>£{{ product.cost }}</p>
-                </td>
-                <td>
-                    <a class="btn btn-danger" href="{% url 'remove_from_bag' product.id %}">Remove</a>
-                </td>
-            </tr>
-            {% endfor %}
+                        {% elif product.item == 'back' %}
+                        <div class="d-flex justify-content-center">
+                            <div id="viewFrontPlate"
+                                class="checkout-number-plate-container number-plate-container-white mb-2">
+                                <p class="checkout-number-plate-font" id="white-number-plate">{{ product.reg_number }}
+                                </p>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="plateContainer">
+                                <div id="viewFrontPlate"
+                                    class="checkout-number-plate-container number-plate-container-yellow mb-2">
+                                    <p class="checkout-number-plate-font" id="white-number-plate">
+                                        {{ product.reg_number }}
+                                    </p>
+                                </div>
+                                <div id="viewBackPlate"
+                                    class="checkout-number-plate-container number-plate-container-white">
+                                    <p class="checkout-number-plate-font" id="yellow-number-plate">
+                                        {{ product.reg_number }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <h6 class="capitalize mx-3">Uk Number Plate Replacement</h6>
+                    </td>
+                    <td>
+                        <p>£{{ product.cost }}</p>
+                    </td>
+                    <td>
+                        <p class="capitalize">{{ product.item }}</p>
+                    </td>
+                    <td style="width: 50px">
+                        <input type="number" class="form-control" value="{{ product.quantity }}">
+                        <a class="text-info text-center mt-2"
+                            href="{% url 'remove_from_bag' product.id %}"><small>Update</small></a>
+                        <a class="text-danger text-center mt-2"
+                            href="{% url 'remove_from_bag' product.id %}"><small>Remove</small></a>
+                    </td>
+                    <td>
+                        <p>£{{ product.cost }}</p>
+                    </td>
+                </tr>
+                {% endfor %}
 
-        </table>
-        {% else %}
-        <div class="bg-light p-3">
-            <p>Your bag is empty.</p>
-            <a class="btn bg-main" href="{% url 'design_plates' %}">Start Shopping</a>
+            </table>
+            <a class="btn btn-danger mt-2" href="{% url 'empty_basket' %}">Empty Basket</a>
+            {% else %}
+            <div class="p-3">
+                <p class="text-center">You currently have no items in your basket.</p>
+                <div class="d-flex justify-content-center">
+                    <a class="btn bg-main" href="{% url 'design_plates' %}">Start Shopping</a>
+                </div>
+            </div>
+            {% endif %}
         </div>
-
-        {% endif %}
-
-
     </div>
     {% if bag_items %}
     <div class="col-3 m-0 p-0">
-        <div class="bg-light m-3 p-3">
-            <a class="btn btn-danger" href="{% url 'empty_basket' %}">Empty Basket</a>
-            <p>Total Items: {{ product_count }}</p>
+        <div class="checkout-container p-3 mb-3">
+            <p>Add a fitting kit for free delivery, only an extra £xx.xx</p>
+            <button class="btn bg-main container-fluid">Add to basket</button>
+        </div>
+        <div class="checkout-container p-3">
             <p>Total Item cost: £ {{ total }}</p>
             <p>Delivery: £{{ delivery }}</p>
             <h5>Total £{{ grand_total }}</h5>
-            <a class="text-dark btn btn-info" href="{% url 'design_plates' %}">Check Out</a>
+            <a class="btn btn-success container-fluid py-3" href="{% url 'design_plates' %}">Check Out</a>
         </div>
     </div>
     {% endif %}
