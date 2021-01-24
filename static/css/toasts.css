@@ -1,0 +1,22 @@
+.messages-container {
+    position: fixed;
+    display: inline-block;
+    top: 72px;
+    right: 15px;
+    z-index: 999999;
+}
+
+.custom-toast {
+    overflow: visible;
+    color: black;
+    z-index: 999999;
+}
+
+.toast-success {
+    border-top: solid rgb(67, 205, 75) 4px;
+}
+
+.toast {
+    color: black;
+    cursor: pointer;
+}

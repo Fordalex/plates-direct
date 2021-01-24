@@ -1,18 +1,19 @@
 from django.shortcuts import render, redirect
 import random
+from django.contrib import messages
 
 # Create your views here.
 def view_bag(request):
     """ Display the shopping basket page. """
     print(request.session['bag'])
+    request.session['redirect_url'] = request.path
     return render(request, 'bag/bag.html')
 
 
 def add_to_bag(request):
     """ Add the item to the shopping basket in the session. """
 
-    quantity = 1
-    redirect_url = request.POST.get('redirect_url')
+    redirect_url = request.session['redirect_url']
     bag = request.session.get('bag', {})
     id_count = request.session.get('id_count', 0)
     reg_number = request.POST.get('reg_number')
@@ -23,16 +24,23 @@ def add_to_bag(request):
         if 'fitting_kit' in list(bag.keys()):
             bag['fitting_kit']['quantity'] += 1
         else:
-            bag['fitting_kit'] = {'quantity': 1, 'item': 'fitting kit'}
+            bag['fitting_kit'] = {'quantity': 1, 'item': 'fitting_kit'}
 
-    bag[id_count] = {
-            'reg_number': reg_number,
-            'item': item,
-        }
+    try:
+        if len(reg_number) > 1:
+            bag[id_count] = {
+                    'reg_number': reg_number,
+                    'item': item,
+                }
+    except:
+        print('no reg')
+
+    messages.success(request, f'Added {item} to your bag.')
 
     request.session['bag'] = bag
     id_count += 1
     request.session['id_count'] = id_count
+
     return redirect(redirect_url)
 
 

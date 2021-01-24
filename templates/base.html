@@ -10,9 +10,14 @@
     <link rel="icon" href="" type=" image/x-icon" />
 
     <!-- js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+
     <script src="{% static 'js/number-plate-builder.js' %}"></script>
 
     <!-- gsap (js)
@@ -22,17 +27,19 @@
 
     <!-- Stripe js -->
     <script src="https://js.stripe.com/v3/"></script>
+
     {% block extra_js %}{% endblock %}
 
     {% block extra_css %}{% endblock %}
     <!-- bootstrap (css) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- css -->
     <link rel="stylesheet" href="{% static 'css/uk_plates.css' %}">
     <link rel="stylesheet" href="{% static 'css/shopping-bag.css' %}">
     <link rel="stylesheet" href="{% static 'css/arrow-animation.css' %}">
     <link rel="stylesheet" href="{% static 'css/overide-bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/toasts.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Uk number plate font -->
     <style>
@@ -82,6 +89,7 @@
             <small class="text-center">£{{ total }}</small>
         </a>
     </nav>
+
     {% if free_delivery_delta > 0 %} <p class="bg-warning p-2 m-0"><img
             src="https://img.icons8.com/material-rounded/24/000000/van.png" /> Spend £{{ free_delivery_delta }} to get
         free
@@ -91,12 +99,19 @@
         to free delivery!</p>
     {% endif %}
 
+    {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <div id="page-content">
         {% block content %}
 
         {% endblock %}
     </div>
-
 
     <footer class="p-3 py-4">
         <div class="row m-0 p-0">
@@ -157,14 +172,13 @@
                 <a>Other Services</a>
             </nav>
         </div>
-
-
-
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+    {% block postloadjs %}
+    <script>
+        $('.toast').toggleClass('show');
+    </script>
+    {% endblock %}
 </body>
 
 </html>

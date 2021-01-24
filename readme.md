@@ -46,7 +46,13 @@
 
     Hosted the site on heroku.
 
-21/01/2021 # 18:14pm - 
+21/01/2021 # 18:14pm - 19:25pm
+
+    Added the logic for the fitting kits to be added at the checkout.
+
+21/01/2012 #   20:45pm - 21:35pm
+
+    Added toasts and styling.
 
 
 Time: 7Hours 21Mins.
@@ -55,11 +61,11 @@ Time: 7Hours 21Mins.
 
 - Add toasts.
 
+- Add the navigation for mobile.
+
 - When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
 
 - Animate on scroll.
-
-- Add the navigation for mobile.
 
 - Add content for the FAQs page.
 
@@ -144,6 +150,8 @@ Create a urls.py in the APPNAME
     ] 
 
 ## The Shopping Bag
+
+IMPORTANT - if using sessions you need to connect the site up the the database, instrutions furture below.
 
 Create a new app call 'bag'
 

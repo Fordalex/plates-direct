@@ -14,7 +14,6 @@ Design Plates
         <div class="white-container">
             <form action="{% url 'add_to_bag' %}" method="POST">
                 {% csrf_token %}
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 <input type="hidden" name="item" id="item" value="both">
                 <div class="p-0 d-flex justify-content-center">
                     <div class="p-0 container-fluid">
@@ -28,8 +27,8 @@ Design Plates
                         </div>
                         <p class="mb-2"><small class="text-danger">Please make sure you add the spaces in the correct
                                 position.</small></p>
-                        <input class="form-control" placeholder="REG PLATE" name="reg_number" id="reg_number"
-                            maxlength="8">
+                        <input class="form-control" placeholder="REG PLATE" autocomplete="off" name="reg_number"
+                            id="reg_number" maxlength="8">
                     </div>
                 </div>
                 <p class="price-style mt-3">Price: <b class="price">£19.99</b></p>
