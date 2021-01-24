@@ -26,7 +26,14 @@
 1Hour 34Mins # 22/01/2021 # 21:05 - 22:39
     Added the logic so the user can empty the basket and remove individual items.
 
-24/01/2021 # 07:00am - 
+24/01/2021 # 07:00am - 08:33am
+    Added more styling to the checkout page, fixed the items id so users can delete their items and create duplicates. Added fitting kit img for later. Fixed floating point error.
+
+24/01/2021 # 09:43am - 10:50am
+    Added the logic for the fitting kits to be added to the basket on purchase.
+
+
+Host, toasts and add fitting kit.
 
 
 

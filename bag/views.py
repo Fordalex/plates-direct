@@ -17,21 +17,17 @@ def add_to_bag(request):
     id_count = request.session.get('id_count', 0)
     reg_number = request.POST.get('reg_number')
     item = request.POST.get('item')
+    fitting_kit = request.POST.get('fitting-kit')
 
-    # if item in list(bag.keys()):
-    #     bag[item] += [reg_number]
-    # else:
-    #     bag[item] = [reg_number]
+    if fitting_kit == 'on':
+        if 'fitting_kit' in list(bag.keys()):
+            bag['fitting_kit']['quantity'] += 1
+        else:
+            bag['fitting_kit'] = {'quantity': 1, 'item': 'fitting kit'}
 
-    if reg_number in bag.keys():
-        bag[id_count] = {
-                'reg_number': reg_number,
-                'plates': item,
-            }
-    else:
-        bag[id_count] = {
+    bag[id_count] = {
             'reg_number': reg_number,
-            'plates': item,
+            'item': item,
         }
 
     print(request.session['bag'])

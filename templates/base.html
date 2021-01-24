@@ -82,10 +82,13 @@
             <small class="text-center">£{{ total }}</small>
         </a>
     </nav>
-    {% if free_delivery_delta > 0 %} <p class="bg-warning p-2 m-0">Spend £{{ free_delivery_delta }} to get free
+    {% if free_delivery_delta > 0 %} <p class="bg-warning p-2 m-0"><img
+            src="https://img.icons8.com/material-rounded/24/000000/van.png" /> Spend £{{ free_delivery_delta }} to get
+        free
         delivery!</p>
     {% else %}
-    <p class="bg-warning p-2 m-0">Your entitled to free delivery!</p>
+    <p class="bg-warning p-2 m-0"><img src="https://img.icons8.com/material-rounded/24/000000/van.png" /> Your entitled
+        to free delivery!</p>
     {% endif %}
 
     <div id="page-content">

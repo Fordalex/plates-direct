@@ -6,39 +6,41 @@ def bag_contents(request):
     bag_items = []
     total = 0
     product_count = 0
-    bag = request.session.get('bag', {})
-
-    # for item, value in bag.items():
-    #     product = item
-    #     if product == 'both' or 'front' or 'back':
-    #         for reg in value:
-    #             
-
-    #             
+    bag = request.session.get('bag', {})  
 
     for item, dic in bag.items():
         product = item
-        plate_amount = bag[item]['plates']
 
-        if plate_amount == 'both': 
+        item_name = bag[item]['item']
+
+        if item_name == 'both': 
             product_cost = 19.99
-        elif plate_amount == 'front' or 'back':
+        elif item_name == 'front' or item_name == 'back':
             product_cost = 10.99
-        elif plate_amount == 'fitting_kit':
+        elif item_name == 'fitting kit':
             product_cost = 4.99
-
-        bag_items.append(
-            {
-                'reg_number': bag[product]['reg_number'],
-                'item': bag[product]['plates'],
-                'cost': product_cost,
-                'quantity': 1,
-                'id': product
-            }
-        )
+        if item_name == 'both' or item_name == 'front' or item_name == 'back':
+            
+            bag_items.append(
+                {
+                    'reg_number': bag[product]['reg_number'],
+                    'item': bag[product]['item'],
+                    'cost': product_cost,
+                    'quantity': 1,
+                    'id': product
+                }
+            )
+        else:
+            bag_items.append(
+                {
+                    'reg_number': 0,
+                    'item': 0,
+                    'cost': product_cost,
+                    'quantity': bag[product]['quantity'],
+                    'id': product
+                }
+            )
         total += product_cost
-
-        
 
     if total < settings.FREE_DELIVERY_THERESHOLD:
         delivery = settings.STANDARD_DELIVERY
@@ -48,7 +50,6 @@ def bag_contents(request):
         delivery = 0
         free_delivery_delta = 0
         grand_total = round(total, 2)
-
 
 
     context = {

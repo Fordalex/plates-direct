@@ -34,6 +34,13 @@ body {
     text-transform: capitalize;
 }
 
+.white-container {
+    box-shadow: 3px 4px 7px 4px rgb(0,0,0,0.1);
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+}
+
 /* navigation */
 
 nav {
@@ -75,7 +82,8 @@ a:hover {
 /* home */
 
 .header-content {
-    height: 600px;
+    height: 100vh;
+    max-height: 650px;
     position: relative;
 }
 
@@ -84,16 +92,28 @@ a:hover {
     font-weight: 700;
 }
 
+.home-container {
+    position: relative;
+    padding-bottom: 52px;
+}
+
+.home-container a {
+    position: absolute;
+    width: 160px;
+    bottom: 15px;
+    right: calc(50% - 80px);
+}
+
 /* replacement plates */
 
 .price-style {
-    color: rgb(223, 223, 223);
+    color: rgb(95, 95, 95);
     font-size: 1.5em;
 }
 
 .price-style b {
-    color: white;
-    font-size: 1.5em;
+    color: rgb(37, 37, 37);
+    font-size: 1.2em;
 }
 
 /* footer */
