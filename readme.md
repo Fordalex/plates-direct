@@ -32,8 +32,10 @@
 24/01/2021 # 09:43am - 10:50am
     Added the logic for the fitting kits to be added to the basket on purchase.
 
+24/01/2021 # 12:07 - 
 
-Host, toasts and add fitting kit.
+
+Host, toasts.
 
 
 
@@ -169,6 +171,17 @@ Also, add the variables FREE_DELIVERY_THERESHOLD & STANDARD_DELIVERY in the sett
 This dictionary can now be viewed on every page on the project. Access the value of the total with this syntax:
 
     {{ total }}
+
+### Hosting
+
+Start of creating a Procfile
+    web: gunicorn plates_direct.wsgi:application
+
+Install Gunicorn
+    pip install gunicorn
+
+Install psycopg2-binary
+    pip install psycopg2-binary
 
 ### Acknowledgments
 

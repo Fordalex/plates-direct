@@ -1,0 +1,1 @@
+web: gunicorn plates_direct.wsgi:application
