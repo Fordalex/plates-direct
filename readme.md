@@ -174,15 +174,15 @@ This dictionary can now be viewed on every page on the project. Access the value
 
 ### Hosting
 
-Start of creating a Procfile
+Start off creating a Procfile with the following content:
 
     web: gunicorn plates_direct.wsgi:application
 
-Install Gunicorn
+Install Gunicorn with the following commmand:
 
     pip install gunicorn
 
-Go into the heroku 'settings', 'reveal config vars'
+Go into the heroku 'settings', 'reveal config vars' and add the following variable:
 
     DISABLE_COLLECTSTATIC 1
 
@@ -197,10 +197,6 @@ Install whitenoise
 Added this to the meddleware classes
 
     MIDDLEWARE_CLASSES = ( 'whitenoise.middleware.WhiteNoiseMiddleware',)
-
-Also add the following to the bottom of the settings.py file
-
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 Then create the requirements.txt file
 

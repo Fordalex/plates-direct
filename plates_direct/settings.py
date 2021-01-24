@@ -27,7 +27,7 @@ SECRET_KEY = '5*(0*c(b%&t1n%4ifr$!qas7o6!0(!e($0*%h-obu_quw8uc+3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['plates-direct.herokuapp.com']
+ALLOWED_HOSTS = ['plates-direct.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -128,11 +128,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 FREE_DELIVERY_THERESHOLD = 20
 STANDARD_DELIVERY = 3.99
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
