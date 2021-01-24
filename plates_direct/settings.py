@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'plates_direct.urls'
@@ -133,3 +134,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 FREE_DELIVERY_THERESHOLD = 20
 STANDARD_DELIVERY = 3.99
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

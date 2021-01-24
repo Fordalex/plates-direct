@@ -182,10 +182,6 @@ Install Gunicorn
 
     pip install gunicorn
 
-Install psycopg2-binary
-
-    pip install psycopg2-binary
-
 Go into the heroku 'settings', 'reveal config vars'
 
     DISABLE_COLLECTSTATIC 1
@@ -193,6 +189,23 @@ Go into the heroku 'settings', 'reveal config vars'
 Add the link to the allowed hosting in the project settings.
 
     ALLOWED_HOSTS = ['plates-direct.herokuapp.com']
+
+Install whitenoise
+
+    pip install whitenoise
+
+Added this to the meddleware classes
+
+    MIDDLEWARE_CLASSES = ( 'whitenoise.middleware.WhiteNoiseMiddleware',)
+
+Also add the following to the bottom of the settings.py file
+
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+Then create the requirements.txt file
+
+    pip freeze --local > requirements.txt
+
 
 ### Acknowledgments
 
