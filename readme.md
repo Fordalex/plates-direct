@@ -175,13 +175,24 @@ This dictionary can now be viewed on every page on the project. Access the value
 ### Hosting
 
 Start of creating a Procfile
+
     web: gunicorn plates_direct.wsgi:application
 
 Install Gunicorn
+
     pip install gunicorn
 
 Install psycopg2-binary
+
     pip install psycopg2-binary
+
+Go into the heroku 'settings', 'reveal config vars'
+
+    DISABLE_COLLECTSTATIC 1
+
+Add the link to the allowed hosting in the project settings.
+
+    ALLOWED_HOSTS = ['plates-direct.herokuapp.com']
 
 ### Acknowledgments
 

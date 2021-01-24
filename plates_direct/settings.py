@@ -27,7 +27,7 @@ SECRET_KEY = '5*(0*c(b%&t1n%4ifr$!qas7o6!0(!e($0*%h-obu_quw8uc+3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['plates-direct.herokuapp.com']
 
 
 # Application definition
