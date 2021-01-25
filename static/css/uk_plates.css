@@ -87,3 +87,40 @@
     border-radius: 1px;
     padding: 7px;
 }
+
+/* mobile uk registration */
+
+@media only screen and (max-width: 480px) {
+    .number-plate-container {
+        border: solid black 1px;
+        border-radius: 4px;
+        min-width: 291px;
+        min-height: 57px;
+    }
+    
+    .number-plate-container::before {
+        border-radius: 3px;
+    }
+    .number-plate-font {
+        font-size: 3.1em;
+    }
+  }
+
+  @media only screen and (min-width: 1100px) {
+    .number-plate-container {
+        border: solid black 1px;
+        border-radius: 8px;
+        min-width: 575px;
+        min-height: 129px;
+    }
+    
+    .number-plate-container::before {
+        border-radius: 6px;
+    }
+    .number-plate-font {
+        font-size: 7em;
+    }
+  }
+
+
+

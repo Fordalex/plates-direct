@@ -10,25 +10,25 @@ var viewPlates = 'both';
 function updatePlates() {
     var frontPlate = `
             <div id="viewBackPlate" class="number-plate-container number-plate-container-white ">
-                <p class="number-plate-font" id="yellow-number-plate">${numberPlate}</p>
+                <p class="number-plate-font yellow-number-plate">${numberPlate}</p>
             </div>
     `;
 
     var backPlate = `
                 <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
-                    <p class="number-plate-font" id="white-number-plate">${numberPlate}</p>
+                    <p class="number-plate-font white-number-plate">${numberPlate}</p>
                 </div>
     `;
 
     if (viewPlates == 'both') {
-        $('#plateContainer').html(backPlate);
-        $('#plateContainer').append(frontPlate);
+        $('.plateContainer').html(backPlate);
+        $('.plateContainer').append(frontPlate);
         $('.price').html('£19.99');
     } else if (viewPlates == 'front') {
-        $('#plateContainer').html(frontPlate);
+        $('.plateContainer').html(frontPlate);
         $('.price').html('£10.99');
     } else {
-        $('#plateContainer').html(backPlate);
+        $('.plateContainer').html(backPlate);
         $('.price').html('£10.99');
     }
 

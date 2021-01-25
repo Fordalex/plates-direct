@@ -46,13 +46,22 @@
 
     Hosted the site on heroku.
 
-21/01/2021 # 18:14pm - 19:25pm
+24/01/2021 # 18:14pm - 19:25pm
 
     Added the logic for the fitting kits to be added at the checkout.
 
-21/01/2012 #   20:45pm - 21:35pm
+24/01/2012 # 20:45pm - 21:35pm
 
     Added toasts and styling.
+
+25/01/2021 # 19:00pm - 19:48pm
+
+    Added AOS library and made the project more responsive.
+
+25/01/2021 # 20:10pm -20:46pm
+
+    Made the uk registration page more responsive.
+
 
 
 Time: 7Hours 21Mins.

@@ -1,6 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<style>
+    .number-plate-wrapper {
+        background: url('{% static 'media/concrete.jpg' %}');
+        background-size: cover;
+    }
+
+    .number-plate-wrapper::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+{% endblock %}
+
 {% block title %}
 Design Plates
 {% endblock %}
@@ -8,9 +28,9 @@ Design Plates
 {% block content %}
 
 
-<div class="row number-plate-wrapper">
+<div class="row number-plate-wrapper justify-content-center m-0 p-0">
     <!-- Purchasing options -->
-    <div class="col-4 bg-dark p-5">
+    <div class="col-12 col-md-5 col-xl-3 p-3 py-5">
         <div class="white-container">
             <form action="{% url 'add_to_bag' %}" method="POST">
                 {% csrf_token %}
@@ -41,16 +61,15 @@ Design Plates
     </div>
 
     <!-- view plates -->
-    <div class="col-8 d-flex justify-content-center align-items-center py-5">
-        <div id="plateContainer">
+    <div class="col-12 col-md-7 d-flex justify-content-center align-items-center py-5">
+        <div class="plateContainer">
             <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
-                <p class="number-plate-font" id="white-number-plate">PL35 DCT</p>
+                <p class="number-plate-font white-number-plate">PL35 DCT</p>
             </div>
             <div id="viewBackPlate" class="number-plate-container number-plate-container-white">
-                <p class="number-plate-font" id="yellow-number-plate">PL35 DCT</p>
+                <p class="number-plate-font yellow-number-plate">PL35 DCT</p>
             </div>
         </div>
-
     </div>
 </div>
 

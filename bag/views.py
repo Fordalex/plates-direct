@@ -25,6 +25,7 @@ def add_to_bag(request):
             bag['fitting_kit']['quantity'] += 1
         else:
             bag['fitting_kit'] = {'quantity': 1, 'item': 'fitting_kit'}
+        messages.success(request, f'Added a fitting kit to your bag.')
 
     try:
         if len(reg_number) > 1:
@@ -35,7 +36,7 @@ def add_to_bag(request):
     except:
         print('no reg')
 
-    messages.success(request, f'Added {item} to your bag.')
+    messages.success(request, f'Added {item} UK Registration to your bag.')
 
     request.session['bag'] = bag
     id_count += 1
