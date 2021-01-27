@@ -43,7 +43,7 @@ function toggleNavigation() {
         $('.mobile-links-container').css('box-shadow','0 0 0 0 rgba(0,0,0,0)');
     } else {
         // open the navigation animation
-        $('.mobile-links-container').css('box-shadow','50vw 0 0 0 rgba(0,0,0,0.4)');
+        $('.mobile-links-container').css('box-shadow','50vw 0 0 0 rgba(0,0,0,0.75)');
         anime({
             targets: '.mobile-links-container',
             translateX: '65vw',

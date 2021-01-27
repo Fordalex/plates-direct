@@ -3,6 +3,10 @@ nav {
     background-color: black;
     padding: 0 24px;
     z-index: 99999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 nav ul {

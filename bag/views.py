@@ -5,7 +5,6 @@ from django.contrib import messages
 # Create your views here.
 def view_bag(request):
     """ Display the shopping basket page. """
-    print(request.session['bag'])
     request.session['redirect_url'] = request.path
     return render(request, 'bag/bag.html')
 
@@ -52,7 +51,6 @@ def remove_from_bag(request, reg):
     bag.pop(reg)
 
     request.session['bag'] = bag
-    print(request.session['bag'])
     return redirect('view_bag')
 
 

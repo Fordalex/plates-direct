@@ -62,9 +62,13 @@
 
     Made the uk registration page more responsive.
 
-27/01/2021 # 03:45am - 04
+27/01/2021 # 03:45am - 05:41pm
 
-    Added the mobile navigation and the animations.
+    Added the mobile navigation and the animations, tweaked some of the layout the make the pages more responsive.
+
+27/01/2021 # 14:12pm - 14:52pm
+
+    Made the project more responsive.
 
 
 
@@ -72,13 +76,9 @@ Time: 7Hours 21Mins.
 
 ### Feature left to implement
 
-- Add toasts.
-
-- Add the navigation for mobile.
+- Fix toasts.
 
 - When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
-
-- Animate on scroll.
 
 - Add content for the FAQs page.
 

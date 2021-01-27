@@ -17,6 +17,11 @@
         z-index: 0;
         background-color: rgba(0, 0, 0, 0.5);
     }
+
+    @font-face {
+        font-family: "ukNumberPlate";
+        src: url("{% static 'font/CharlesWright-Bold.ttf' %}");
+    }
 </style>
 
 {% endblock %}
@@ -25,12 +30,13 @@
 Design Plates
 {% endblock %}
 
+
 {% block content %}
 
 
 <div class="row number-plate-wrapper justify-content-center m-0 p-0">
     <!-- Purchasing options -->
-    <div class="col-12 col-md-5 col-xl-3 p-3 py-5">
+    <div class="col-12 col-md-5 col-xl-3 order-2 order-md-1 pt-0 px-3 pb-5 pt-md-5">
         <div class="white-container">
             <form action="{% url 'add_to_bag' %}" method="POST">
                 {% csrf_token %}
@@ -61,7 +67,7 @@ Design Plates
     </div>
 
     <!-- view plates -->
-    <div class="col-12 col-md-7 d-flex justify-content-center align-items-center py-5">
+    <div class="col-12 col-md-7 d-flex justify-content-center align-items-center py-5 order-1 order-md-2">
         <div class="plateContainer">
             <div id="viewFrontPlate" class="number-plate-container number-plate-container-yellow mb-2">
                 <p class="number-plate-font white-number-plate">PL35 DCT</p>
