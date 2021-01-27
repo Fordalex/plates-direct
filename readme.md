@@ -70,13 +70,17 @@
 
     Made the project more responsive.
 
+27/01/2021 # 22:10pm - 
+
+    Made the shopping bag more responsive and added the buttons for the mobile view.
+
 
 
 Time: 7Hours 21Mins.
 
 ### Feature left to implement
 
-- Fix toasts.
+- Fix toasts, they don't close currently.
 
 - When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
 
@@ -86,6 +90,9 @@ Time: 7Hours 21Mins.
 
 - Add page for user to add documents on checkout.
 
+- Need to add the logic for the increment values in the basket.
+
+- When just a fitting kit is added, the toast mentions a uk number plate. "Added none...".
 
 ## Django project setup
 

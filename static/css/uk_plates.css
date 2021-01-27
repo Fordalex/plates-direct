@@ -124,3 +124,19 @@
 
 
 
+  @media only screen and (max-width: 767px) {
+    .checkout-number-plate-container {
+        border-radius: 2px;
+        min-width: 111px;
+        min-height: 20px;
+    }
+    
+    .checkout-number-plate-container::before {
+        border-radius: 2px;
+    }
+    
+    .checkout-number-plate-font {
+        font-size: 1em;
+    }
+
+  }
