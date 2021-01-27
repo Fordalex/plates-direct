@@ -62,6 +62,10 @@
 
     Made the uk registration page more responsive.
 
+27/01/2021 # 03:45am - 04
+
+    Added the mobile navigation and the animations.
+
 
 
 Time: 7Hours 21Mins.

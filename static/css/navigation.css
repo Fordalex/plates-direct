@@ -1,0 +1,82 @@
+nav {
+    height: 65px;
+    background-color: black;
+    padding: 0 24px;
+    z-index: 99999;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 8px;
+    color: white;
+    cursor: pointer;
+    
+}
+
+#logo {
+    font-family: 'Lobster Two', cursive;
+    font-size: 1.5em;
+    color: var(--mainColour);
+}
+
+a {
+   color: white; 
+   transition: 0.5s;
+   text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--mainColour);
+}
+
+.burger-container {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.burger-container div {
+    height: 4px;
+    width: 30px;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.mobile-links-container {
+    display: none;
+    position: fixed;
+    background-color: black;
+    top: 64px;
+    left: -65vw;
+    bottom: 0;
+    width: 60vw;
+    z-index: 9999;
+    box-shadow: 2px 2px 6px 6px rgba(0,0,0,0);
+    border-right: solid white 1px;
+}
+
+.mobile-links-container li {
+    border-top: solid white 1px;
+    display: block;
+    padding: 15px;
+    margin: 0;
+    
+}
+
+.mobile-links-container li:last-child {
+    border-bottom: solid white 1px;
+}
+
+
+@media only screen and (max-width: 480px) {
+    #logo {
+        font-size: 1em;
+    }
+}
