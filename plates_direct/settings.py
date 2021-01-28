@@ -145,6 +145,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+# Stripe
 FREE_DELIVERY_THERESHOLD = 20
 STANDARD_DELIVERY = 3.99
-
+STRIPE_CURRENCY = 'GBP'
+STRIPE_PUBLIC_KEY = os.environ.get('api_key')
+STRIPE_SECRET_KEY = os.environ.get('secret_key')

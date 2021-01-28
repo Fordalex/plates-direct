@@ -52,7 +52,6 @@ def bag_contents(request):
         free_delivery_delta = 0
         grand_total = round(total, 2)
 
-
     context = {
         'bag_items': bag_items,
         'total': round(total, 2),
@@ -60,8 +59,10 @@ def bag_contents(request):
         'delivery': delivery,
         'free_delivery_delta': round(free_delivery_delta, 2),
         'free_delivery_threshold': settings.FREE_DELIVERY_THERESHOLD,
-        'grand_total': round(grand_total, 2),
+        'grand_total': grand_total,
         'fitting_kit': fitting_kit, 
     }
+
+    request.session['bag_info'] = context
 
     return context

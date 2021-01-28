@@ -90,9 +90,15 @@
 
     Added stripe and the payment form. Ready to add the logic for the payment to be taken and the order to be saved.
 
+28/01/2021 # 21:30pm - 
+
+    
+
 Time: 7Hours 21Mins.
 
 ### Feature left to implement
+
+- The customers amount isn't adding up correctly!
 
 - When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
 
@@ -119,6 +125,8 @@ Time: 7Hours 21Mins.
 - After order complete add the order to the database.
 
 - GDPR tickbox for the customer.
+
+- File document need to be handled somehow.
 
 ## Django project setup
 
@@ -346,6 +354,12 @@ Add the following to the stripe_elements.js file:
     var stripe = Stripe(stripe_public_key)
     var elements = stripe.elements();
     var card = elements.create('card');
+
+Add the following to the settings.py file:
+
+    STRIPE_CURRENCY = 'GBP'
+    STRIPE_PUBLIC_KEY = os.environ.get('api_key')
+    STRIPE_SECRET_KEY = os.environ.get('secret_key')
 
 
 

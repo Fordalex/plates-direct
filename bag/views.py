@@ -27,7 +27,7 @@ def add_to_bag(request):
         messages.success(request, f'Added a fitting kit to your bag.')
 
     try:
-        if len(reg_number) > 1:
+        if len(reg_number) > 2:
             bag[id_count] = {
                     'reg_number': reg_number,
                     'item': item,
@@ -47,9 +47,7 @@ def add_to_bag(request):
 def remove_from_bag(request, reg):
     """ Remove the item form the shopping bag and return the user to the shopping bag page. """
     bag = request.session.get('bag', {})
-
     bag.pop(reg)
-
     request.session['bag'] = bag
     return redirect('view_bag')
 
