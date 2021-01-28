@@ -76,11 +76,11 @@
 
 27/01/2021 # 01:30pm -
 
+    Moved the basket items to the includes file. Started the checkout app.
+
 Time: 7Hours 21Mins.
 
 ### Feature left to implement
-
-- Fix toasts, they don't close currently.
 
 - When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
 
@@ -93,6 +93,10 @@ Time: 7Hours 21Mins.
 - Need to add the logic for the increment values in the basket.
 
 - When just a fitting kit is added, the toast mentions a uk number plate. "Added none...".
+
+- 404 error messages.
+
+- JS on the form to make sure users can't go to checkout with an incorrect number plate.
 
 ## Django project setup
 

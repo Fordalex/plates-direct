@@ -4,15 +4,17 @@
 <div class="d-flex justify-content-between align-items-center">
     <div id="plateContainer">
         {% if product.item == 'both' or product.item == 'back' %}
-        <div id="viewFrontPlate" class="checkout-number-plate-container number-plate-container-yellow mb-2">
-            <p class="checkout-number-plate-font" id="white-number-plate">
+        <div id="viewFrontPlate"
+            class="checkout-number-plate-container number-plate-container-yellow mobile-checkout-container mb-2">
+            <p class="checkout-number-plate-font mobile-checkout-number-plate-font" id="white-number-plate">
                 {{ product.reg_number }}
             </p>
         </div>
         {% endif %}
         {% if product.item == 'both' or product.item == 'front' %}
-        <div id="viewBackPlate" class="checkout-number-plate-container number-plate-container-white">
-            <p class="checkout-number-plate-font" id="yellow-number-plate">
+        <div id="viewBackPlate"
+            class="checkout-number-plate-container number-plate-container-white mobile-checkout-container">
+            <p class="checkout-number-plate-font mobile-checkout-number-plate-font" id="yellow-number-plate">
                 {{ product.reg_number }}
             </p>
         </div>
