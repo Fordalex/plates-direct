@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Bag
+{% endblock %}
+
+{% block content %}
+
+<h1 class="p-3 py-4 m-0 text-center">Review Order</h1>
+
+<div class="row m-0 p-0 pb-4">
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="white-container">
+            <h5>Your Basket</h5>
+            <hr>
+            {% include 'includes/review_order_items.html' %}
+        </div>
+
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 my-3 mb-md-3 mt-md-0">
+        <div class="white-container">
+            <h5>Your Information</h5>
+            <hr>
+            <h6>General</h6>
+            <p class="d-flex justify-content-between m-0">First Name: <b>{{ first_name }}</b></p>
+            <p class="d-flex justify-content-between m-0">Last Name: <b>{{ last_name }}</b></p>
+            <p class="d-flex justify-content-between m-0">Email: <b>{{ email }}</b></p>
+            <h6 class="mt-2">Address</h6>
+            <p class="d-flex justify-content-between m-0">First Line Address: <b>{{ first_line_address }}</b></p>
+            <p class="d-flex justify-content-between m-0">Town: <b>{{ town }}</b></p>
+            <p class="d-flex justify-content-between m-0">City: <b>{{ city }}</b></p>
+            <p class="d-flex justify-content-between m-0">Post Code: <b>{{ post_code }}</b></p>
+            <h6 class="mt-2">Documents</h6>
+            <p class="d-flex justify-content-between m-0">File Name: <b>{{ post_code }}</b></p>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="white-container">
+            <h5>Make Payment</h5>
+            <hr>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

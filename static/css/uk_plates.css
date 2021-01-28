@@ -91,7 +91,7 @@
 .mobile-checkout-container {
     border-radius: 2px;
     min-width: 111px;
-    min-height: 20px;
+    height: 20px;
 }
 
 .mobile-checkout-container::before {
@@ -109,7 +109,7 @@
         border: solid black 1px;
         border-radius: 4px;
         min-width: 291px;
-        min-height: 57px;
+        height: 57px;
     }
     
     .number-plate-container::before {
@@ -125,7 +125,7 @@
         border: solid black 1px;
         border-radius: 8px;
         min-width: 575px;
-        min-height: 129px;
+        height: 129px;
     }
     
     .number-plate-container::before {

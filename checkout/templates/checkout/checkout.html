@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<style>
+    @font-face {
+        font-family: "ukNumberPlate";
+        src: url("{% static 'font/CharlesWright-Bold.ttf' %}");
+    }
+</style>
+
+{% endblock %}
+
+{% block title %}
+Bag
+{% endblock %}
+
+{% block content %}
+
+<h1 class="p-3 py-4 m-0 text-center">Your Information</h1>
+<form method="POST" action="{% url 'add_personal_information' %}">
+    {% csrf_token %}
+    <div class="row m-0 p-3 bg-light justify-content-center">
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="white-container">
+                <h5>General</h5>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">First Name</label>
+                        <input name="first_name" class="form-control" id="inputEmail4" placeholder="john">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Last Name</label>
+                        <input name="last_name" class="form-control" id="inputPassword4" placeholder="smith">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputPassword4">Email</label>
+                        <input name="email" class="form-control" id="inputPassword4"
+                            placeholder="plates-direct@gmail.com">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 my-3 mb-md-3 mt-md-0">
+            <div class="white-container">
+                <h5>Address</h5>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputCity">First Line</label>
+                        <input name="first_line_address" type="text" class="form-control" placeholder="33 Main St"
+                            id="inputCity">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Town</label>
+                        <input name="town" type="text" class="form-control" placeholder="Brick Lane" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputZip">City</label>
+                        <input name="city" type="text" class="form-control" placeholder="London" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputZip">Post Code</label>
+                        <input name="post_code" type="text" class="form-control" placeholder="E1 7AF" id="inputZip">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="white-container">
+                <h5>Documents</h5>
+                <hr>
+                <div class="form-row">
+                    <input type="file">
+                </div>
+                <div class="form-row mt-3 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success">Review Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

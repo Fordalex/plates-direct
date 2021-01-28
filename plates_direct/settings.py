@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'design_plate',
     'faqs',
     'bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [

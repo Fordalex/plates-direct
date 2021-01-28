@@ -78,9 +78,11 @@
 
     Moved the basket items to the includes file.
 
-28/01/2021 # 11:20pm - 
+28/01/2021 # 11:20pm - 13:00pm
 
+    Started the checkout app, created the model and started the checkout form.
 
+28/01/2021 # 15:02pm - 
 
 Time: 7Hours 21Mins.
 
@@ -98,11 +100,15 @@ Time: 7Hours 21Mins.
 
 - When just a fitting kit is added, the toast mentions a uk number plate. "Added none...".
 
+- Set the project up with Google analytics
+
 - 404 error messages.
 
 - JS on the form to make sure users can't go to checkout with an incorrect number plate.
 
 - The menu needs to close then the user clicks off the menu.
+
+- Allow the user to edit thier personal information and basket items, on the review order page, just redirect the user back to the relivant page.
 
 ## Django project setup
 
