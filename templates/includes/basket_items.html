@@ -1,0 +1,65 @@
+{% load static %}
+{% for product in bag_items %}
+{% if product.item == 'both' or product.item == 'front' or product.item == 'back' %}
+<div class="d-flex justify-content-between align-items-center">
+    <div id="plateContainer">
+        {% if product.item == 'both' or product.item == 'back' %}
+        <div id="viewFrontPlate" class="checkout-number-plate-container number-plate-container-yellow mb-2">
+            <p class="checkout-number-plate-font" id="white-number-plate">
+                {{ product.reg_number }}
+            </p>
+        </div>
+        {% endif %}
+        {% if product.item == 'both' or product.item == 'front' %}
+        <div id="viewBackPlate" class="checkout-number-plate-container number-plate-container-white">
+            <p class="checkout-number-plate-font" id="yellow-number-plate">
+                {{ product.reg_number }}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+    <div>
+        <p class="capitalize mx-3 m-0">Uk Number Plate Replacement {{ product.item }}</p>
+        <p class="mx-3 text-danger">£{{ product.cost }}</p>
+    </div>
+</div>
+<div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between">
+        {% if product.quantity == 1 %}
+        <button class="btn btn-light p-0 px-2"><img
+                src="https://img.icons8.com/wired/25/000000/delete-forever.png" /></button>
+        {% else %}
+        <button class="btn btn-light">-</button>
+        {% endif %}
+        <input value="{{ product.quantity }}" class="form-control" style="width: 50px; height: 46px;">
+        <button class="btn btn-light">+</button>
+    </div>
+    <a class="text-center mt-2 btn btn-danger" href="{% url 'remove_from_bag' product.id %}">Remove</a>
+</div>
+
+{% else %}
+<div class="d-flex justify-content-between">
+    <p><img src="{% static 'media/fitting-kit.jpg' %}" style="width: 90px;"></p>
+    <div class="container-fluid">
+        <p class="capitalize mx-3 m-0">Fitting Kit</p>
+        <p class="mx-3 text-danger">£{{ product.cost }}</p>
+    </div>
+</div>
+<div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between">
+        {% if product.quantity == 1 %}
+        <button class="btn btn-light p-0 px-2"><img
+                src="https://img.icons8.com/wired/25/000000/delete-forever.png" /></button>
+        {% else %}
+        <button class="btn btn-light">-</button>
+        {% endif %}
+        <input value="{{ product.quantity }}" class="form-control" style="width: 50px; height: 46px;">
+        <button class="btn btn-light">+</button>
+    </div>
+    <a class="text-center mt-2 btn btn-danger" href="{% url 'remove_from_bag' product.id %}">Remove</a>
+</div>
+{% endif %}
+{% if not forloop.last %}
+<hr>
+{% endif %}
+{% endfor %}

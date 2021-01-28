@@ -11,6 +11,11 @@
     color: black;
 }
 
+.toast-item-container {
+    height: 220px;
+    overflow: scroll;
+}
+
 .custom-toast {
     overflow: visible;
     color: black;

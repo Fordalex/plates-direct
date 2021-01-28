@@ -70,11 +70,11 @@
 
     Made the project more responsive.
 
-27/01/2021 # 22:10pm - 
+27/01/2021 # 22:10pm - 23:37pm
 
     Made the shopping bag more responsive and added the buttons for the mobile view.
 
-
+27/01/2021 # 01:30pm -
 
 Time: 7Hours 21Mins.
 
