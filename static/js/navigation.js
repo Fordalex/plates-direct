@@ -10,6 +10,10 @@ $(document).on('click', '.page-content', function() {
     toggleNavigation();
 })
 
+$(document).on('click', '.menu-overlay', function() {
+    toggleNavigation();
+})
+
 function toggleNavigation() {
     $('.mobile-links-container').css('display', 'block');
     if ($('.mobile-links-container').hasClass('open')) {
@@ -40,10 +44,10 @@ function toggleNavigation() {
             rotateZ: '0deg',
             translateY: '0'
         })
-        $('.mobile-links-container').css('box-shadow','0 0 0 0 rgba(0,0,0,0)');
+        $('.menu-overlay').css('display', 'none');
     } else {
         // open the navigation animation
-        $('.mobile-links-container').css('box-shadow','50vw 0 0 0 rgba(0,0,0,0.75)');
+        $('.menu-overlay').css('display', 'block');
         anime({
             targets: '.mobile-links-container',
             translateX: '65vw',

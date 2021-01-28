@@ -53,6 +53,19 @@ a:hover {
     border-radius: 3px;
 }
 
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 64px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.75);
+    height: 100vh;
+    width: 100vw;
+    z-index: 99;
+}
+
 .mobile-links-container {
     display: none;
     position: fixed;
@@ -62,7 +75,6 @@ a:hover {
     bottom: 0;
     width: 60vw;
     z-index: 9999;
-    box-shadow: 2px 2px 6px 6px rgba(0,0,0,0);
     border-right: solid white 1px;
 }
 

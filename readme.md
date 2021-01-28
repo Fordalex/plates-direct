@@ -74,9 +74,13 @@
 
     Made the shopping bag more responsive and added the buttons for the mobile view.
 
-27/01/2021 # 01:30pm -
+28/01/2021 # 01:30pm - 02:25pm 
 
-    Moved the basket items to the includes file. Started the checkout app.
+    Moved the basket items to the includes file.
+
+28/01/2021 # 11:20pm - 
+
+
 
 Time: 7Hours 21Mins.
 
@@ -97,6 +101,8 @@ Time: 7Hours 21Mins.
 - 404 error messages.
 
 - JS on the form to make sure users can't go to checkout with an incorrect number plate.
+
+- The menu needs to close then the user clicks off the menu.
 
 ## Django project setup
 
