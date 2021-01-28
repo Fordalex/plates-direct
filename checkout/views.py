@@ -1,4 +1,12 @@
 from django.shortcuts import render, redirect
+import json
+import stripe
+import os
+from os import path
+if path.exists('env.py'):
+    import env
+
+stripe.api_key = os.environ.get('api_key')
 
 # Create your views here.
 def checkout(request):
@@ -33,6 +41,11 @@ def payment_review(request):
         'town': town,
         'city': city,
         'post_code': post_code,
+        'stripe_public_key': os.environ.get('api_key'),
+        'client_secret': 'test test test',
     }
 
     return render(request, 'checkout/payment_review.html', context)
+
+def create_payment(request):
+    return null

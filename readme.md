@@ -82,7 +82,13 @@
 
     Started the checkout app, created the model and started the checkout form.
 
-28/01/2021 # 15:02pm - 
+28/01/2021 # 15:02pm - 15:58pm 
+
+    Added the personal information form and passed the information on to the review order page.
+
+28/01/2021 # 16:22 - 17:41pm 
+
+    Added stripe and the payment form. Ready to add the logic for the payment to be taken and the order to be saved.
 
 Time: 7Hours 21Mins.
 
@@ -109,6 +115,10 @@ Time: 7Hours 21Mins.
 - The menu needs to close then the user clicks off the menu.
 
 - Allow the user to edit thier personal information and basket items, on the review order page, just redirect the user back to the relivant page.
+
+- After order complete add the order to the database.
+
+- GDPR tickbox for the customer.
 
 ## Django project setup
 
@@ -305,6 +315,39 @@ In the settings.py file chagned the database setting to:
 Then make the migrations:
 
     python3 manage.py migrate
+
+### Stripe
+
+Go to the stripe website, login and get the API keys.
+
+Add <script src="https://js.stripe.com/v3/"></script> into the head of the base.html file.
+
+[Intergration Builder](https://stripe.com/docs/payments/integration-builder)
+
+Add the following to ta postload js block in the footer of your payment html page.
+
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+
+Add checkout folder in the static folder.
+
+Add a css and js folder to the new checkout folder.
+
+Then add a checkout.css file to the css folder.
+
+Then add a stripe_elements.js file to new js folder.
+
+Add the following to the stripe_elements.js file:
+
+    var stripe_public_key = $('#id_stripe_public_key').text().slice(1,-1);
+    var client_secret = $('#id_client_secret').text().slice(1,-1);
+    var stripe = Stripe(stripe_public_key)
+    var elements = stripe.elements();
+    var card = elements.create('card');
+
+
 
 ### Acknowledgments
 
