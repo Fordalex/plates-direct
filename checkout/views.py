@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Order
 from django.conf import settings
 import json
 import stripe
@@ -15,8 +16,10 @@ def add_personal_information(request):
     request.session['first_name'] = request.POST.get('first_name')
     request.session['last_name'] = request.POST.get('last_name')
     request.session['email'] = request.POST.get('email')
+    request.session['phone_number'] = request.POST.get('phone_number')
 
     request.session['first_line_address'] = request.POST.get('first_line_address')
+    request.session['second_address'] = request.POST.get('second_address')
     request.session['town'] = request.POST.get('town')
     request.session['city'] = request.POST.get('city')
     request.session['post_code'] = request.POST.get('post_code')
@@ -62,18 +65,20 @@ def payment_review(request):
     first_name = request.session['first_name']
     last_name = request.session['last_name']
     email = request.session['email']
+    phone_number = request.session['phone_number']
     first_line_address = request.session['first_line_address']
+    second_address = request.session['second_address']
     town = request.session['town']
     city = request.session['city']
     post_code = request.session['post_code']
-
-
 
     context = {
         'first_name': first_name,
         'last_name': last_name,
         'email': email,
+        'phone_number': phone_number,
         'first_line_address': first_line_address,
+        'second_address': second_address,
         'town': town,
         'city': city,
         'post_code': post_code,
@@ -83,5 +88,21 @@ def payment_review(request):
 
     return render(request, 'checkout/payment_review.html', context)
 
-def create_payment(request):
-    return null
+def order_complete(request):
+    """ If the payment cleared add the order to the order list """ 
+    new_order = Order(
+        full_name = request.session['full_name'],
+        last_name = request.session['last_name'],
+        email = request.session['email'],
+        phone_number = request.session['phone_number'],
+        postcode = request.session['post_code'],
+        town_or_city = request.session['city'],
+        country = request.session['country'],
+
+    )
+    new_order.save()
+
+
+
+    request.session['bag'] = {}
+    return render(request, 'checkout/order_complete.html')

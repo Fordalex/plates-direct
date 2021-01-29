@@ -11,7 +11,7 @@
     z-index: 0;
     overflow: hidden;
     min-width: 438px;
-    min-height: 92px;
+    height: 92px;
 }
 
 .number-plate-container::before {

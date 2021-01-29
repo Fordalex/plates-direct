@@ -19,6 +19,11 @@ body {
 
 }
 
+label {
+    font-weight: 700;
+    font-size: 0.9em
+}
+
 #page-content {
     max-width: 1600px;
     overflow: hidden;

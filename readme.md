@@ -2,6 +2,8 @@
 
 ### Feature left to implement
 
+- edit buttons on the checkout form.
+
 - The customers amount isn't adding up correctly!
 
 - When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
@@ -31,6 +33,12 @@
 - GDPR tickbox for the customer.
 
 - File document need to be handled somehow.
+
+- when an item is removed from the toast on the replacement plates page, the page isn't redirect back to the correct page.
+
+- Card details need to be checked with the customer address?
+
+- After payment was made, refreshed the page and the payment was taken again??
 
 ## Django project setup
 
