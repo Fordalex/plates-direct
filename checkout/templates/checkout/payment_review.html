@@ -30,9 +30,11 @@ Bag
             <hr>
             <h6 class="mt-2">Address</h6>
             <p class="d-flex justify-content-between m-0">First Line Address: <b>{{ first_line_address }}</b></p>
+            {% if second_address %}
             <p class="d-flex justify-content-between m-0">Second Address: <b>{{ second_address }}</b></p>
-            <p class="d-flex justify-content-between m-0">Town: <b>{{ town }}</b></p>
-            <p class="d-flex justify-content-between m-0">City: <b>{{ city }}</b></p>
+            {% endif %}
+            <p class="d-flex justify-content-between m-0">Town or City: <b>{{ town_or_city }}</b></p>
+            <p class="d-flex justify-content-between m-0">County: <b>{{ county }}</b></p>
             <p class="d-flex justify-content-between m-0">Post Code: <b>{{ post_code }}</b></p>
             <hr>
             <h6 class="mt-2">Documents</h6>

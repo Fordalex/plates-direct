@@ -20,8 +20,8 @@ def add_personal_information(request):
 
     request.session['first_line_address'] = request.POST.get('first_line_address')
     request.session['second_address'] = request.POST.get('second_address')
-    request.session['town'] = request.POST.get('town')
-    request.session['city'] = request.POST.get('city')
+    request.session['town_or_city'] = request.POST.get('town_or_city')
+    request.session['county'] = request.POST.get('county')
     request.session['post_code'] = request.POST.get('post_code')
 
     return redirect('payment_review')
@@ -68,8 +68,8 @@ def payment_review(request):
     phone_number = request.session['phone_number']
     first_line_address = request.session['first_line_address']
     second_address = request.session['second_address']
-    town = request.session['town']
-    city = request.session['city']
+    town_or_city = request.session['town_or_city']
+    county = request.session['county']
     post_code = request.session['post_code']
 
     context = {
@@ -79,8 +79,8 @@ def payment_review(request):
         'phone_number': phone_number,
         'first_line_address': first_line_address,
         'second_address': second_address,
-        'town': town,
-        'city': city,
+        'town_or_city': town_or_city,
+        'county': county,
         'post_code': post_code,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
@@ -89,20 +89,30 @@ def payment_review(request):
     return render(request, 'checkout/payment_review.html', context)
 
 def order_complete(request):
-    """ If the payment cleared add the order to the order list """ 
+    """ If the payment cleared add the order to the order list """
+    bag_info = request.session.get('bag_info', {})
+    if not bag_info:
+        message.error(request, "There's nothing in your bag at the moment")
+        return redirect(reverse('design_plates'))
+
     new_order = Order(
-        full_name = request.session['full_name'],
+        full_name = request.session['first_name'],
         last_name = request.session['last_name'],
         email = request.session['email'],
         phone_number = request.session['phone_number'],
         postcode = request.session['post_code'],
-        town_or_city = request.session['city'],
-        country = request.session['country'],
-
+        town_or_city = request.session['town_or_city'],
+        county = request.session['county'],
+        street_address1 = request.session['first_line_address'],
+        street_address2 = request.session['second_address'],
+        delivery_cost = bag_info['delivery'],
+        order_total = bag_info['total'],
+        grand_total = bag_info['grand_total'],
     )
     new_order.save()
-
-
+    print(new_order)
 
     request.session['bag'] = {}
+    request.session['bag_info'] = {}
+
     return render(request, 'checkout/order_complete.html')

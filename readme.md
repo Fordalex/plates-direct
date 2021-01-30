@@ -40,6 +40,8 @@
 
 - After payment was made, refreshed the page and the payment was taken again??
 
+- Show the user their order number on their order confirmation page.
+
 ## Django project setup
 
 Creating a virtual environment

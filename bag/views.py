@@ -55,4 +55,5 @@ def remove_from_bag(request, reg):
 def empty_basket(request):
     """ Empty the users shopping basket. """
     request.session['bag'] = {}
+    request.session['bag_info'] = {}
     return redirect('view_bag')
