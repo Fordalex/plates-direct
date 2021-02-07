@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .functions import reg_plate_format
 from .models import Order
 from django.conf import settings
 import json
@@ -10,9 +11,12 @@ if path.exists('env.py'):
 
 # Create your views here.
 def checkout(request):
+    print(request.session['bag'])
     return render(request, 'checkout/checkout.html')
 
 def add_personal_information(request):
+
+
     request.session['first_name'] = request.POST.get('first_name')
     request.session['last_name'] = request.POST.get('last_name')
     request.session['email'] = request.POST.get('email')
@@ -96,6 +100,7 @@ def order_complete(request):
         return redirect(reverse('design_plates'))
 
     new_order = Order(
+        reg_plate = reg_plate_format(request.session['bag']),
         first_name = request.session['first_name'],
         last_name = request.session['last_name'],
         email = request.session['email'],
@@ -110,12 +115,11 @@ def order_complete(request):
         grand_total = bag_info['grand_total'],
     )
     new_order.save()
-    print(new_order)
 
     request.session['bag'] = {}
     request.session['bag_info'] = {}
 
-    return redirect(reverse('order_complete_page'))
+    return redirect('complete_page')
 
-def order_complete_page(request):
+def complete_page(request):
     return render(request, 'checkout/order_complete.html')

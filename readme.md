@@ -2,19 +2,11 @@
 
 ### Feature left to implement
 
-- The checkout page places another order when the users refreshes the page...
-
 - edit buttons on the checkout form.
 
 - The customers amount isn't adding up correctly!
 
-- When the user has pressed 'checkout' a promt will appear asking them if they want to add a kitting kit to their basket.
-
 - Add content for the FAQs page.
-
-- Add the payment logic and page.
-
-- Add page for user to add documents on checkout.
 
 - Need to add the logic for the increment values in the basket.
 
@@ -26,21 +18,13 @@
 
 - JS on the form to make sure users can't go to checkout with an incorrect number plate.
 
-- The menu needs to close then the user clicks off the menu.
-
 - Allow the user to edit thier personal information and basket items, on the review order page, just redirect the user back to the relivant page.
 
-- After order complete add the order to the database.
-
 - GDPR tickbox for the customer.
-
-- File document need to be handled somehow.
 
 - when an item is removed from the toast on the replacement plates page, the page isn't redirect back to the correct page.
 
 - Card details need to be checked with the customer address?
-
-- After payment was made, refreshed the page and the payment was taken again??
 
 - Show the user their order number on their order confirmation page.
 

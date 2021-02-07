@@ -30,6 +30,7 @@ def bag_contents(request):
                     'id': product
                 }
             )
+
         else:
             bag_items.append(
                 {
