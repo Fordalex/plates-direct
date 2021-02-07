@@ -2,9 +2,20 @@ import uuid
 from django.db import models
 from django.utils import timezone
 
+class RegPlate(models.Model):
+    reg_plate = models.CharField(max_length=32, null=False)
+    log_book = models.FileField(blank=True, null=True, upload_to='log_book')
+    quantity = models.CharField(max_length=10, null=False, blank=False,default="none.")
+
+    def __str__(self):
+        return self.reg_plate
+
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    full_name = models.CharField(max_length=50, null=False, blank=False)
+    reg_plate = models.ManyToManyField(RegPlate, blank=True, related_name="order_reg_plate")
+    order_made = models.BooleanField(default=False)
+    order_dispatch = models.BooleanField(default=False)
+    first_name = models.CharField(max_length=50, null=False, blank=False,default="none.")
     last_name = models.CharField(max_length=50, null=False, blank=False, default="none.")
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -35,4 +46,3 @@ class Order(models.Model):
 
     def __str__(self):
         return self.email
-

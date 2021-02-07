@@ -275,7 +275,75 @@ Add the following to the settings.py file:
     STRIPE_PUBLIC_KEY = os.environ.get('api_key')
     STRIPE_SECRET_KEY = os.environ.get('secret_key')
 
+## Django fileField
 
+
+
+## Django useful commands
+
+Run project
+    
+    python manage.py runserver
+
+Migrations
+
+    python3 manage.py makemigrations
+
+Migrations test
+
+    python3 manage.py makemigrations --dry-run
+
+Show migrations
+
+    python3 manage.py showmigrations
+
+Migrate
+
+    python3 manage.py migrate
+
+Migrate test
+
+    python3 manage.py migrate --plan
+
+Create super user
+
+    python3 manage.py createsuperuser
+
+Shell
+
+    python3 manage.py shell
+
+Delete all data
+
+    python3 manage.py flush
+
+Migrations set to zero
+
+    python3 migrate APPNAME zero
+
+Fake migrations
+
+    python3 manage.py migrate --fake
+
+Install coverage
+
+    pip3 install coverage
+
+Test using coverage
+
+    coverage run --source=APPNAME manage.py test
+
+Coverage html
+
+    coverage html
+
+Coverage report
+
+    coverage report
+
+Run server
+
+    python3 -m http.server
 
 ### Acknowledgments
 

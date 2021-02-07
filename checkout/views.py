@@ -96,7 +96,7 @@ def order_complete(request):
         return redirect(reverse('design_plates'))
 
     new_order = Order(
-        full_name = request.session['first_name'],
+        first_name = request.session['first_name'],
         last_name = request.session['last_name'],
         email = request.session['email'],
         phone_number = request.session['phone_number'],

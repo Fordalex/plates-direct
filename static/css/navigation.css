@@ -1,12 +1,16 @@
-nav {
-    height: 65px;
-    background-color: black;
-    padding: 0 24px;
+.navigation-free-delivery-container {
     z-index: 99999;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
+}
+
+nav {
+    height: 65px;
+    background-color: black;
+    padding: 0 24px;
+
 }
 
 nav ul {
@@ -90,6 +94,14 @@ a:hover {
     border-bottom: solid white 1px;
 }
 
+.bg-banner {
+     background: white;
+}
+
+.delivery-van {
+    transform: scaleX(-1);
+    margin-right: 5px;
+}
 
 @media only screen and (max-width: 480px) {
     #logo {

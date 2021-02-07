@@ -18,67 +18,62 @@ Bag
 {% block content %}
 
 <h1 class="p-3 py-4 m-0 text-center">Your Information</h1>
-<form method="POST" action="{% url 'add_personal_information' %}">
+<form method="POST" action="{% url 'add_personal_information' %}" id="addPersonalInformation">
     {% csrf_token %}
     <div class="row m-0 p-3 bg-light justify-content-center">
 
-        <div class="col-12 col-md-6 col-lg-6">
+        <div class="col-12 col-md-6 col-lg-5 mb-3 p-0">
             <div class="white-container">
                 <h5>General</h5>
                 <hr>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">First Name</label>
-                        <input name="first_name" class="form-control">
+                        <input name="first_name" class="form-control" id="firstName">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Last Name</label>
-                        <input name="last_name" class="form-control">
+                        <input name="last_name" class="form-control" id="lastName">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Email</label>
-                        <input name="email" class="form-control">
+                        <input name="email" class="form-control" id="email">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Phone Number</label>
-                        <input name="phone_number" class="form-control">
+                        <input name="phone_number" class="form-control" id="phoneNumber">
                     </div>
                 </div>
-                <hr>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-5 p-0 pl-md-3">
+            <div class="white-container">
                 <h5>Address</h5>
                 <hr>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">Address 1 *</label>
-                        <input name="first_line_address" type="text" class="form-control">
+                        <input name="first_line_address" type="text" class="form-control" id="firstLineAdress">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputCity">Address 2</label>
-                        <input name="second_address" type="text" class="form-control">
+                        <input name="second_address" type="text" class="form-control" id="secondAdress">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <label for="inputState">City or Town *</label>
-                        <input name="town_or_city" type="text" class="form-control">
+                        <input name="town_or_city" type="text" class="form-control" id="townOrCity">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputZip">County *</label>
-                        <input name="county" type="text" class="form-control">
+                        <input name="county" type="text" class="form-control" id="county">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputZip">Postcode *</label>
-                        <input name="post_code" type="text" class="form-control">
+                        <input name="post_code" type="text" class="form-control" id="postcode">
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="white-container">
-                <h5>Documents</h5>
                 <hr>
-                <div class="form-row">
-                    <input type="file">
-                </div>
-                <hr>
+                <div id="errorContainer"></div>
                 <div class="form-row mt-3 d-flex justify-content-end">
                     <button type="submit" class="btn btn-success">Next</button>
                 </div>
@@ -87,4 +82,8 @@ Bag
     </div>
 </form>
 
+{% endblock %}
+
+{% block postloadjs %}
+<script src="{% static 'js/validate_information.js' %}"></script>
 {% endblock %}
