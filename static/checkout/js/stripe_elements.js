@@ -69,3 +69,31 @@ form.addEventListener('submit', function(ev) {
       }
   });
 });
+
+function sendEmail() {
+  var data = {
+    service_id: 'gmail',
+    template_id: 'plates_direct',
+    user_id: 'user_fFFNDDJRdm6W6POwiDzok',
+    template_params: {
+        'full_name': 'test',
+        'email': 'test',
+        'subject': 'test',
+        'information': 'test',
+    }
+};
+$.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+    type: 'POST',
+    data: JSON.stringify(data),
+    contentType: 'application/json'
+}).done(function () {
+    $('#form_container').html(`
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="text-center text-success mt-4">Your message has been sent!</p>
+                    </div>`)
+}).fail(function (error) {
+    alert('Oops... ' + JSON.stringify(error) + 'Your order has been placed but there has been a problem with your confirmation email. Please send us an email to: plates-direct@hotmail.com. your order number is xxxxxxxx');
+});
+}
+
+

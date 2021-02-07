@@ -2,6 +2,8 @@
 
 ### Feature left to implement
 
+- The checkout page places another order when the users refreshes the page...
+
 - edit buttons on the checkout form.
 
 - The customers amount isn't adding up correctly!

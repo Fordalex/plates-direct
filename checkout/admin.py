@@ -1,13 +1,16 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
-from .models import Order, RegPlate
+from .models import Order
 
 # Register your models here.
 class OrderAdmin(admin.ModelAdmin):
-    readonly_fields = ('order_number', 'date','delivery_cost',
-              'order_total', 'grand_total')
+    readonly_fields = ( 'date','first_name',
+              'email', 'phone_number', 'county',
+              'postcode', 'town_or_city', 'street_address1',
+              'street_address2', 'delivery_cost',
+              'order_total', 'grand_total','order_number',)
 
-    fields = ('order_made', 'order_dispatch','reg_plate', 'date','first_name',
+    fields = ('order_made', 'order_dispatch', 'date','first_name',
               'email', 'phone_number', 'county',
               'postcode', 'town_or_city', 'street_address1',
               'street_address2', 'delivery_cost',
@@ -24,6 +27,5 @@ class OrderAdmin(admin.ModelAdmin):
 
 admin.site.site_header = 'Plates Direct'
 admin.site.register(Order, OrderAdmin)
-admin.site.register(RegPlate)
 admin.site.unregister(Group)
 

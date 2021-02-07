@@ -60,7 +60,7 @@ a:hover {
 .menu-overlay {
     display: none;
     position: fixed;
-    top: 64px;
+    top: 98px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -74,7 +74,7 @@ a:hover {
     display: none;
     position: fixed;
     background-color: black;
-    top: 64px;
+    top: 98px;
     left: -65vw;
     bottom: 0;
     width: 60vw;

@@ -44,7 +44,3 @@ $('#addPersonalInformation').submit(function(e){
     }
 
 });
-
-
-
-console.log('page connected')

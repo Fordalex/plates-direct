@@ -115,4 +115,7 @@ def order_complete(request):
     request.session['bag'] = {}
     request.session['bag_info'] = {}
 
+    return redirect(reverse('order_complete_page'))
+
+def order_complete_page(request):
     return render(request, 'checkout/order_complete.html')

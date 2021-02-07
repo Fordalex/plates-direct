@@ -73,6 +73,13 @@ Bag
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}
 <script src="{% static 'checkout/js/stripe_elements.js' %}" defer></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init("user_fFFNDDJRdm6W6POwiDzok");
+    })();
+</script>
+
 {% endblock %}
 
 {% block extra_css %}
