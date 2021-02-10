@@ -26,4 +26,5 @@ urlpatterns = [
     path("faqs/", include("faqs.urls")),
     path("bag/", include("bag.urls")),
     path("checkout/", include("checkout.urls")),
+    path("fitting_kits/", include("fitting_kits.urls")),
 ] + static(settings.MEDIA_ROOT, document_root=settings.MEDIA_ROOT)

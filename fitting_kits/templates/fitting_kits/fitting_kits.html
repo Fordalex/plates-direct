@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Fitting Kits
+{% endblock %}
+
+{% block content %}
+
+<h1 class="p-3 py-4 m-0 text-center bg-white">Fitting Kits</h1>
+
+<div class="row m-0 p-3 justify-content-center">
+    <div class="col-12 col-md-12 col-lg-10 p-0 pb-3">
+        <div class="white-container">
+            <p>Our fitting kits come with everything you need to apply your new plates:</p>
+            <ul>
+                <li>10 Sticky Pads</li>
+                <li>2x b.ack, 2x yellow and 2x white screws</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-5 m-0 p-0 pr-0 pr-md-3 pb-3">
+        <div class="white-container">
+            <h4>How to install</h4>
+            <hr>
+            <dl>
+                <dt>Step 1 - Remove old number plates and clean</dt>
+                <dd>Sticky pads work best when applied to a freshly clean suface. Make sure you have dryed the suface
+                    thoughly before application.</dd>
+                <dt>Step 2 - Apply the sticky pads</dt>
+                <dd>Using 5 sticky pads per plate, peel the protective backing off the pads and space them evenly
+                    across the back of the number plate.</dd>
+                <dt></dt>
+                <dd></dd>
+            </dl>
+        </div>
+
+    </div>
+    <div class="col-12 col-md-6 col-lg-5 m-0 p-0 h-100">
+        <div class="white-container d-flex justify-content-center align-items-center">
+            <img src="{% static 'media/fitting-kit.jpg' %}" style="width: 50%;" class="p-2">
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
